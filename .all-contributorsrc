@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Vishu26",
+      "name": "Srikumar Sastry",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/24605821?v=4",
+      "profile": "https://github.com/Vishu26",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Academics_Projects",
+  "projectOwner": "Tikam02",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
