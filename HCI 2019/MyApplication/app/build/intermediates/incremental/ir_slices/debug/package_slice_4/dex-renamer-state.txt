@@ -1,0 +1,4 @@
+#Tue Nov 19 02:01:22 IST 2019
+base.0=/Users/srikumar/Downloads/io2015-codelabs-master/voice-interaction-api/MyApplication/app/build/intermediates/transforms/dexMerger/debug/4
+path.0=classes.dex
+renamed.0=classes.dex
