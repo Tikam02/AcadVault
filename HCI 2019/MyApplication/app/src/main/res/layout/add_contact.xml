@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:id="@+id/rectangle_1"
+        android:layout_width="410dp"
+        android:layout_height="57dp"
+        android:background="#3F51B5"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:id="@+id/rel_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/rectangle_2"
+                android:layout_width="90dp"
+                android:layout_height="57dp"
+                android:background="@drawable/roundbtn"
+                android:elevation="4dp" />
+
+            <View
+                android:id="@+id/bt_2"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:background="@drawable/star"
+                android:elevation="4dp"
+                android:layout_marginLeft="16dp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rel_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/rel_1"
+            android:layout_marginStart="16dp">
+
+            <View
+                android:id="@+id/rectangle_3"
+                android:layout_width="90dp"
+                android:layout_height="57dp"
+                android:background="@drawable/roundbtn"
+                android:elevation="4dp"
+                />
+
+            <View
+                android:id="@+id/bt_3"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/heart"
+                android:elevation="4dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="8dp"/>
+        </RelativeLayout>
+        <!-- Rectangle 17 -->
+
+
+        <RelativeLayout
+            android:id="@+id/rel_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/rel_2"
+            android:layout_marginStart="16dp">
+            <View
+                android:id="@+id/rectangle_4"
+                android:layout_width="90dp"
+                android:layout_height="57dp"
+                android:background="@drawable/roundbtn"
+                android:elevation="4dp" />
+
+            <View
+                android:id="@+id/bt_4"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:background="@drawable/bullet"
+                android:elevation="4dp"
+                android:layout_marginStart="22dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/rel_3"
+            android:layout_marginStart="17dp">
+            <View
+                android:id="@+id/rectangle_5"
+                android:layout_width="90dp"
+                android:layout_height="57dp"
+                android:background="@drawable/roundbtn"
+                android:backgroundTint="#FA8072"
+                android:elevation="4dp" />
+
+            <View
+                android:id="@+id/bt_5"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:background="@drawable/add"
+                android:elevation="4dp"
+                android:layout_marginStart="18dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pic"
+        android:layout_below="@+id/rectangle_1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#38BABA">
+
+        <Button
+            android:id="@+id/heart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/heart"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="#fff"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/propic"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:id="@+id/camera"
+            android:background="@drawable/ic_camera"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            />
+
+    </RelativeLayout>
+
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pic"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:text="Name"
+            android:textSize="16pt"
+            android:layout_column="1"
+            android:layout_row="1"/>
+        <EditText
+            android:id="@+id/name"
+            android:layout_marginLeft="20dp"
+            android:textSize="16pt"
+            android:width="250dp"
+            android:height="50dp"
+            android:background="#fff"
+            android:layout_row="1"
+            android:layout_column="2" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:textSize="16pt"
+            android:text="Phone"/>
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_marginTop="10dp"
+            android:textSize="16pt"
+            android:inputType="phone"
+            android:layout_marginLeft="20dp"
+            android:width="250dp"
+            android:height="50dp"
+            android:background="#fff"
+            android:layout_row="2"
+            android:layout_column="2" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:text="Relation"
+            android:textSize="16pt"
+            android:layout_column="1"
+            android:layout_row="3" />
+        <Spinner
+            android:layout_marginTop="10dp"
+            android:id="@+id/spinner"
+            android:layout_marginLeft="20dp"
+            android:background="#fff"
+            android:layout_row="3"
+            android:layout_column="2"/>
+    </GridLayout>
+
+    <Button
+        android:id="@+id/addContact"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="Add"
+        android:textSize="14pt"
+        android:background="@drawable/roundbtn"
+        android:layout_below="@+id/grid"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:id="@+id/rectangle_7"
+        android:layout_width="410dp"
+        android:layout_height="57dp"
+        android:layout_alignParentBottom="true"
+        android:background="#3F51B5">
+
+        <RelativeLayout
+            android:id="@+id/rel_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/rectangle_8"
+                android:layout_width="90dp"
+                android:layout_height="57dp"
+                android:background="@drawable/roundbtn"
+                android:elevation="4dp" />
+
+            <View
+                android:id="@+id/bt_6"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:background="@drawable/ic_phone"
+                android:backgroundTint="#00ff00"
+                android:elevation="4dp"
+                android:layout_marginLeft="16dp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rel_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/rel_5"
+            android:layout_marginStart="16dp">
+
+            <View
+                android:id="@+id/rectangle_9"
+                android:layout_width="90dp"
+                android:layout_height="57dp"
+                android:background="@drawable/roundbtn"
+                android:elevation="4dp"
+                />
+
+            <View
+                android:id="@+id/bt_7"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:background="@drawable/cab"
+                android:backgroundTint="#ffff00"
+                android:elevation="4dp"
+                android:layout_marginStart="17dp"/>
+        </RelativeLayout>
+        <!-- Rectangle 17 -->
+
+
+        <RelativeLayout
+            android:id="@+id/rel_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/rel_6"
+            android:layout_marginStart="16dp">
+            <View
+                android:id="@+id/rectangle_10"
+                android:layout_width="90dp"
+                android:layout_height="57dp"
+                android:background="@drawable/roundbtn"
+                android:elevation="4dp" />
+
+            <View
+                android:id="@+id/bt_8"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:background="@drawable/home"
+                android:backgroundTint="#550000"
+                android:elevation="4dp"
+                android:layout_marginStart="16dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/rel_7"
+            android:layout_marginStart="17dp">
+            <View
+                android:id="@+id/rectangle_11"
+                android:layout_width="90dp"
+                android:layout_height="57dp"
+                android:background="@drawable/roundbtn"
+                android:elevation="4dp" />
+
+            <View
+                android:id="@+id/bt_9"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ent"
+                android:elevation="4dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="3dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

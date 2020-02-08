@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="190dp"
+        android:id="@+id/cardView"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="15dp"
+        >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/roundbtn"
+        android:backgroundTint="#000">
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/iconLeftCardView"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="10pt"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:background="@drawable/roundbtn"
+        android:layout_below="@+id/iconLeftCardView"
+        android:id="@+id/tvMiddleCardView"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="10pt"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:background="@drawable/roundbtn"
+        android:layout_below="@+id/tvMiddleCardView"
+        android:id="@+id/iconRightCardView" />
+</RelativeLayout>
+
+
+</android.support.v7.widget.CardView>
+
+
+</RelativeLayout>
