@@ -1,0 +1,1 @@
+![alt tex](https://github.com/Tikam02/AcadVault/blob/master/img/cover.png)
