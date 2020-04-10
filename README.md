@@ -50,6 +50,14 @@ We understand that there have been unfortunate cases in the past where material 
 
 ## How to contribute
 
+### Option -1 : Direct upload file from browser
+
+- Upload file directly from browser : [Upload files]
+
+### Option - 2 : Clone and PR
+
+- If you have files larger than 100 Mb or not able to upload directly from browser you can use this method.
+
 1. Fork this repository
    
 2. Clone your forked repository
