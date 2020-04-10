@@ -48,10 +48,31 @@ To contribute resources fork this repository and open a PR with the title `Add r
 
 We understand that there have been unfortunate cases in the past where material has been circulated widely without the permission of the author. If you see your material that belongs to you but you did not intend to share, please file an issue describing the situation and we will take it down.
 
+## How to contribute
+
+1. Fork this repository
+   
+2. Clone your forked repository
+   > git clone https://github.com/username/AcadVault.git
+
+3. Create a branch in your local system with your branch name
+   >  git checkout -b [name_of_your_new_branch]
+
+4. Add resources 
+   > git add .
+
+5. Commit 
+   > git commit -m "your message"
+
+6. Push into the branch
+   > git push origin [name_of_your_new_branch]
+
+7. Open a PR with the title `Add resources [your github username]`
+
 ## Maintainers
 
-- @Tikam02
-- @statebait
-- @Kartikeya99
-- @smit2k14
-- @gauravsofat
+- [@Tikam02](https://github.com/Tikam02)
+- [@statebait](https://github.com/statebait)
+- [@Kartikeya99](https://github.com/Kartikeya99)
+- [@smit2k14](https://github.com/smit2k14)
+- [@gauravsofat](https://github.com/gauravsofat)
