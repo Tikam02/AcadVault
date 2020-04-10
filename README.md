@@ -52,7 +52,9 @@ We understand that there have been unfortunate cases in the past where material 
 
 ### Option -1 : Direct upload file from browser
 
-- Upload file directly from browser : [Upload files]
+1. Create new branch, name it as [resource_name-username]
+
+2. Upload file directly from browser : [Upload files]
 
 ### Option - 2 : Clone and PR
 
