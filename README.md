@@ -50,11 +50,17 @@ We understand that there have been unfortunate cases in the past where material 
 
 ## How to contribute
 
-### Option -1 : Direct upload file from browser
+The size of this repo would be pretty huge. So rather than cloning, using the Github website to make contributions seem to be the best option.
 
-1. Create new branch, name it as [resource_name-username]
+### Option - 1 : Fork and Upload.
 
-2. Upload file directly from browser : [Upload files]
+1. Fork this repository.
+
+2. Create a branch in YOUR FORKED REPO.
+
+3. Upload files to that branch.
+
+4. Open a pull request from YOUR BRANCH to this [repo](https://github.com/Tikam02/AcadVault.git).
 
 ### Option - 2 : Clone and PR
 

@@ -1,0 +1,59 @@
+--> Information transfer basic function of CT
+
+--> Physical manifestation of information as produced by the source = Message
+
+--> Two distinct message categories - analog and digital
+
+--> Analog message = physical quantity varying with time in a smooth and continuous fashion. - needs system with high fidelity
+
+--> Digital Message = ordered sequence of symbols selected from a finite set of discrete elements. - needs higher accuracy
+
+--> conversion of signal to electrical - transducer
+
+--> Transmitter - processes input signal to suit channel - coding and modulation occurs here
+
+--> Channel - Electrical medium bridging source and destination.- introduces loss or attenuation
+
+--> Receiver - operates on output signal to prepare for delivery- amplilfication and demodulation, filtering.
+
+--> Distortion - caused due to imperfect system response to signal.- disappears when signal is turned off.
+
+--> interference - contamination due extraneous signals. -- most often on radios. appropriate filtering can reduce this.
+
+--> Noise - random unpredictable signals. 
+
+--> One has transmitter and other receiver - simplex(SX)
+
+--> Full duplex(FDX) - Requires transmitter and receiver at each end.
+
+--> half-duplex(HDX) - transmission in either direction but not at the same time.
+
+--> Fundamental limitations of I Transmission - bandwidth(as a measure of speed, is finite and thus limit rate of signal variation) and noise.
+
+--> Transmission Bandwidth - ability of system to follow signal variations - usable frequency response.
+
+--> Bandwidth (TV) - several MHz, voice signal - 3KHz. For a signal with 'r symbols'/s B>=r/2.
+
+--> Shannon Harley Law -> C = B*log(1 + S/N) -> rate of information transmission cannot exceed channel capacity.
+
+--> Modulating Signal - message.
+
+--> Sinusoidal Carrier modulation grouped under Continuous-wave(CW) modulation. CW produces frequency translation.
+
+--> in AM message spectrum runs from 100Hz to 5KHz.
+
+--> pulse modulation - pulse amplitude modulation (PAM).
+
+Benefits of Modulation: 
+
+--> Efficiency of transmission depends on frequency of transmitted signal.
+
+--> antenna should have 1/10 of signal's wavelength, thus modulation is required.
+
+--> Fractional Bandwidth - absolute bandwidth/center frequency. If this is within 1-10%, costs and complications are minimized
+
+--> Multiplexing - combining several signals for simultaneous transmission on one channel.
+	Frequency Division multiplexing(FDM) uses CW modulation. Time Division Multiplexing(TDM) uses pulse modulation.
+
+--> A variation of multiplexing is multiple access(MA)
+

@@ -1,0 +1,6 @@
+In basic circuit analysis, we assume the distances between the components to be negligible which is not true.
+Thus it might happen that the voltages and currents are not in phase and there might even be time delays across components.
+
+Resistors, capacitors, inductors and the connections between them are considered lumped elements if time delay is negligible.
+If the distance is more, they have to be considered as distributed elements. Thus their values to be evaluated at per-unit-distance basis.
+
