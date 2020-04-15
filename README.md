@@ -1,6 +1,6 @@
 # AcadVault
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -108,6 +108,7 @@ The size of this repo would be pretty huge. So rather than cloning, using the Gi
 <table>
   <tr>
     <td align="center"><a href="https://github.com/Kartikeya99"><img src="https://avatars0.githubusercontent.com/u/15437760?v=4" width="100px;" alt=""/><br /><sub><b>Kartikeya99</b></sub></a><br /><a href="#projectManagement-Kartikeya99" title="Project Management">📆</a></td>
+    <td align="center"><a href="https://statebait.github.io"><img src="https://avatars1.githubusercontent.com/u/22408263?v=4" width="100px;" alt=""/><br /><sub><b>Mohamed Shadab</b></sub></a><br /><a href="#projectManagement-statebait" title="Project Management">📆</a> <a href="#maintenance-statebait" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
