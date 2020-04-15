@@ -109,7 +109,7 @@ The size of this repo would be pretty huge. So rather than cloning, using the Gi
   <tr>
     <td align="center"><a href="https://github.com/Kartikeya99"><img src="https://avatars0.githubusercontent.com/u/15437760?v=4" width="100px;" alt=""/><br /><sub><b>Kartikeya99</b></sub></a><br /><a href="#projectManagement-Kartikeya99" title="Project Management">📆</a></td>
     <td align="center"><a href="https://statebait.github.io"><img src="https://avatars1.githubusercontent.com/u/22408263?v=4" width="100px;" alt=""/><br /><sub><b>Mohamed Shadab</b></sub></a><br /><a href="#projectManagement-statebait" title="Project Management">📆</a> <a href="#maintenance-statebait" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/gauravsofat"><img src="https://avatars3.githubusercontent.com/u/28541230?v=4" width="100px;" alt=""/><br /><sub><b>Gaurav Sofat</b></sub></a><br /><a href="#projectManagement-gauravsofat" title="Project Management">📆</a></td>
+    <td align="center"><a href="https://github.com/gauravsofat"><img src="https://avatars3.githubusercontent.com/u/28541230?v=4" width="100px;" alt=""/><br /><sub><b>Gaurav Sofat</b></sub></a><br /><a href="#projectManagement-gauravsofat" title="Project Management">📆</a> <a href="#maintenance-gauravsofat" title="Maintenance">🚧</a> <a href="#content-gauravsofat" title="Content">🖋</a> <a href="https://github.com/Tikam02/AcadVault/commits?author=gauravsofat" title="Documentation">📖</a></td>
   </tr>
 </table>
 
