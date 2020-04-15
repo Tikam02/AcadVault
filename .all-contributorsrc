@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Kartikeya99",
+      "name": "Kartikeya99",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/15437760?v=4",
+      "profile": "https://github.com/Kartikeya99",
+      "contributions": [
+        "projectManagement"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "AcadVault",
+  "projectOwner": "Tikam02",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
