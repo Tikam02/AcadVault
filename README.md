@@ -85,7 +85,7 @@ The size of this repo would be pretty huge. So rather than cloning, using the Gi
 
 7. Open a PR with the title `Add resources [your github username]`
 
-## Contributors
+
 
 ## Maintainers
 
@@ -94,3 +94,7 @@ The size of this repo would be pretty huge. So rather than cloning, using the Gi
 - [@Kartikeya99](https://github.com/Kartikeya99)
 - [@smit2k14](https://github.com/smit2k14)
 - [@gauravsofat](https://github.com/gauravsofat)
+
+## License
+
+This project is licensed under the MIT License - Copyright (c) AcadVault
