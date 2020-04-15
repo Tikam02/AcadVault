@@ -1,6 +1,6 @@
 # AcadVault
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![alt tex](https://github.com/Tikam02/AcadVault/blob/master/img/cover.png)
@@ -110,6 +110,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/gauravsofat"><img src="https://avatars3.githubusercontent.com/u/28541230?v=4" width="100px;" alt=""/><br /><sub><b>Gaurav Sofat</b></sub></a><br /><a href="#projectManagement-gauravsofat" title="Project Management">📆</a> <a href="#maintenance-gauravsofat" title="Maintenance">🚧</a> <a href="#content-gauravsofat" title="Content">🖋</a> <a href="https://github.com/Tikam02/AcadVault/commits?author=gauravsofat" title="Documentation">📖</a></td>
     <td align="center"><a href="https://0xtimon.me/"><img src="https://avatars3.githubusercontent.com/u/10548085?v=4" width="100px;" alt=""/><br /><sub><b>Tikam Singh Alma</b></sub></a><br /><a href="#maintenance-Tikam02" title="Maintenance">🚧</a> <a href="#content-Tikam02" title="Content">🖋</a> <a href="https://github.com/Tikam02/AcadVault/commits?author=Tikam02" title="Documentation">📖</a> <a href="#projectManagement-Tikam02" title="Project Management">📆</a></td>
     <td align="center"><a href="https://github.com/Kartikeya99"><img src="https://avatars0.githubusercontent.com/u/15437760?v=4" width="100px;" alt=""/><br /><sub><b>Kartikeya99</b></sub></a><br /><a href="#maintenance-Kartikeya99" title="Maintenance">🚧</a> <a href="#content-Kartikeya99" title="Content">🖋</a> <a href="https://github.com/Tikam02/AcadVault/commits?author=Kartikeya99" title="Documentation">📖</a> <a href="#projectManagement-Kartikeya99" title="Project Management">📆</a></td>
+    <td align="center"><a href="https://github.com/smit2k14"><img src="https://avatars2.githubusercontent.com/u/28946542?v=4" width="100px;" alt=""/><br /><sub><b>Smit Shah</b></sub></a><br /><a href="#maintenance-smit2k14" title="Maintenance">🚧</a> <a href="#content-smit2k14" title="Content">🖋</a> <a href="https://github.com/Tikam02/AcadVault/commits?author=smit2k14" title="Documentation">📖</a> <a href="#projectManagement-smit2k14" title="Project Management">📆</a></td>
   </tr>
 </table>
 
