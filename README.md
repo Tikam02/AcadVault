@@ -98,9 +98,7 @@ The size of this repo would be pretty huge. So rather than cloning, using the Gi
 - [@smit2k14](https://github.com/smit2k14)
 - [@gauravsofat](https://github.com/gauravsofat)
 
-## License
 
-This project is licensed under the MIT License - Copyright (c) AcadVault
 
 ## Contributors ✨
 
