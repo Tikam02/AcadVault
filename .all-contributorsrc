@@ -6,6 +6,18 @@
   "commit": false,
   "contributors": [
     {
+      "login": "gauravsofat",
+      "name": "Gaurav Sofat",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/28541230?v=4",
+      "profile": "https://github.com/gauravsofat",
+      "contributions": [
+        "projectManagement",
+        "maintenance",
+        "content",
+        "doc"
+        ]
+     }
+     {
       "login": "Tikam02",
       "name": "Tikam Singh Alma",
       "avatar_url": "https://avatars3.githubusercontent.com/u/10548085?v=4",
