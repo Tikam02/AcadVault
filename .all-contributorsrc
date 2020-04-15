@@ -50,6 +50,15 @@
       "contributions": [
         "projectManagement"
       ]
+    },
+    {
+      "login": "Tikam02",
+      "name": "Tikam Singh Alma",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10548085?v=4",
+      "profile": "https://0xtimon.me/",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
