@@ -30,7 +30,10 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/28541230?v=4",
       "profile": "https://github.com/gauravsofat",
       "contributions": [
-        "projectManagement"
+        "projectManagement",
+        "maintenance",
+        "content",
+        "doc"
       ]
     }
   ],
