@@ -1,6 +1,6 @@
 # AcadVault
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![alt tex](https://github.com/Tikam02/AcadVault/blob/master/img/cover.png)
@@ -117,6 +117,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/RoneelV"><img src="https://avatars0.githubusercontent.com/u/47793622?v=4" width="100px;" alt=""/><br /><sub><b>Roneel V.</b></sub></a><br /><a href="#content-RoneelV" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/meet59patel"><img src="https://avatars2.githubusercontent.com/u/45785817?v=4" width="100px;" alt=""/><br /><sub><b>Meet Patel</b></sub></a><br /><a href="#content-meet59patel" title="Content">🖋</a></td>
   </tr>
 </table>
 
