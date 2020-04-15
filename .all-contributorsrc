@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Tikam02",
+      "name": "Tikam Singh Alma",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10548085?v=4",
+      "profile": "https://0xtimon.me/",
+      "contributions": [
+        "maintenance",
+        "content",
+        "doc",
+        "projectManagement"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "AcadVault",
+  "projectOwner": "Tikam02",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
