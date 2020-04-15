@@ -40,6 +40,18 @@
         "doc",
         "projectManagement"
       ]
+    },
+    {
+      "login": "smit2k14",
+      "name": "Smit Shah",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/28946542?v=4",
+      "profile": "https://github.com/smit2k14",
+      "contributions": [
+        "maintenance",
+        "content",
+        "doc",
+        "projectManagement"
+      ]
     }
   ],
   "contributorsPerLine": 7,
