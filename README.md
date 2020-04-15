@@ -1,4 +1,7 @@
 # AcadVault
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
 ![alt tex](https://github.com/Tikam02/AcadVault/blob/master/img/cover.png)
@@ -98,3 +101,16 @@ The size of this repo would be pretty huge. So rather than cloning, using the Gi
 
 ## contributors
 
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/Kartikeya99"><img src="https://avatars0.githubusercontent.com/u/15437760?v=4" width="100px;" alt=""/><br /><sub><b>Kartikeya99</b></sub></a><br /><a href="#projectManagement-Kartikeya99" title="Project Management">📆</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
