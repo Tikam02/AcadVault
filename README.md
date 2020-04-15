@@ -1,6 +1,6 @@
 # AcadVault
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![alt tex](https://github.com/Tikam02/AcadVault/blob/master/img/cover.png)
@@ -114,6 +114,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://statebait.github.io"><img src="https://avatars1.githubusercontent.com/u/22408263?v=4" width="100px;" alt=""/><br /><sub><b>Mohamed Shadab</b></sub></a><br /><a href="#maintenance-statebait" title="Maintenance">🚧</a> <a href="#content-statebait" title="Content">🖋</a> <a href="https://github.com/Tikam02/AcadVault/commits?author=statebait" title="Documentation">📖</a> <a href="#projectManagement-statebait" title="Project Management">📆</a></td>
     <td align="center"><a href="https://github.com/Vishu26"><img src="https://avatars2.githubusercontent.com/u/24605821?v=4" width="100px;" alt=""/><br /><sub><b>Srikumar Sastry</b></sub></a><br /><a href="#content-Vishu26" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/purva98"><img src="https://avatars2.githubusercontent.com/u/24644158?v=4" width="100px;" alt=""/><br /><sub><b>purva98</b></sub></a><br /><a href="#content-purva98" title="Content">🖋</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/RoneelV"><img src="https://avatars0.githubusercontent.com/u/47793622?v=4" width="100px;" alt=""/><br /><sub><b>Roneel V.</b></sub></a><br /><a href="#content-RoneelV" title="Content">🖋</a></td>
   </tr>
 </table>
 
