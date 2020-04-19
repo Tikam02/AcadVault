@@ -1,0 +1,51 @@
+\documentclass[runningheads, a4paper, oribibl]{llncs}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\graphicspath{{../images/}}
+
+\usepackage{epstopdf}
+\usepackage{standalone}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{fit}
+\usetikzlibrary{shapes,snakes,calc}
+
+\usepackage{listings, color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+ \lstset{frame=tb,
+language=Matlab,
+aboveskip=3mm,
+belowskip=3mm,
+howstringspaces=false,
+columns=flexible,
+basicstyle={\small\ttfamily},
+numbers=none,
+numberstyle=\tiny\color{gray},
+keywordstyle=\color{blue},
+commentstyle=\color{dkgreen},
+stringstyle=\color{black},
+breaklines=true,
+breakatwhitespace=false,
+tabsize=2,
+numbers=left,
+numbersep=5pt,
+title=\lstname
+}
+\usepackage[section]{placeins}
+\usepackage{amsmath,amssymb, cancel}
+\usepackage{url}
+\urldef{\mailsa}\path|201601408@daiict.ac.in|
+\urldef{\mailsb}\path|201601059@daiict.ac.in|
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+\renewcommand\thesubsection{\thesection(\alph{subsection})}
+
+\begin{document}
+    \input{que1.tex}
+\newpage
+    \input{que2.tex}
+\newpage
+    \input{que3.tex}
+\end{document}
