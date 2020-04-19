@@ -1,7 +1,7 @@
 # AcadVault
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![alt tex](https://github.com/Tikam02/AcadVault/blob/master/img/cover.png)
@@ -122,6 +122,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/meet59patel"><img src="https://avatars2.githubusercontent.com/u/45785817?v=4" width="100px;" alt=""/><br /><sub><b>Meet Patel</b></sub></a><br /><a href="#content-meet59patel" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/abhinavraj23"><img src="https://avatars3.githubusercontent.com/u/32960257?v=4" width="100px;" alt=""/><br /><sub><b>Abhinav Raj</b></sub></a><br /><a href="#content-abhinavraj23" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/hitgo00"><img src="https://avatars2.githubusercontent.com/u/41156157?v=4" width="100px;" alt=""/><br /><sub><b>Hitesh Goyal</b></sub></a><br /><a href="#content-hitgo00" title="Content">🖋</a></td>
   </tr>
 </table>
 
