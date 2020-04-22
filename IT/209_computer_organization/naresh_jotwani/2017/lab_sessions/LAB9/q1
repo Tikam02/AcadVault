@@ -1,0 +1,7 @@
+.orig x20
+.start x20
+.clear
+in #0 r1
+out #1 r1
+halt
+.end

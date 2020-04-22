@@ -1,0 +1,39 @@
+.orig x20
+.start x20
+
+mov b #5 r1
+store b x200 r1
+mov b #6 r2
+store b x201 r2
+mov b #10 r3
+store b x202 r3
+mov b #30 r4
+store b x203 r4
+mov b #40 r5
+store b x204 r5
+
+mov b #0 r0 //Counter
+mov w x200 r6
+
+loop: load b [r6] r15 
+add b r15 r7
+add b x1 r6
+add b #1 r0
+comp b #5 r0
+jgt loop
+
+store b x205 r7
+
+mov w #0 r3
+mov w r7 r4
+loop1: sub w #5 r4
+add w #1 r3
+comp w #5 r4
+jle loop1
+store b x209 r4 //Remainder
+store b x208 r3 //Quotient
+
+halt
+.end
+
+

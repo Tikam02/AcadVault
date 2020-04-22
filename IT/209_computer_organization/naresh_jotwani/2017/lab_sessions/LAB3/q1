@@ -1,0 +1,11 @@
+.orig x20
+.start x20
+mov b x4a r1
+mov b x8b r2
+add b r2 r1
+sub b r1 r2
+not b r2 r2
+add b x01 r2
+sub b r2 r1
+halt
+.end

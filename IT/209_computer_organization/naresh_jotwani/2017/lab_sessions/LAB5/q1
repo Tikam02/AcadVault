@@ -1,0 +1,15 @@
+.orig x20
+.start x20
+.clear
+mov w #15 r1
+mov w #3 r2
+mov w #0 r3
+mov w r1 r4
+loop: sub w r2 r4
+add w #1 r3
+comp w r4 r2
+jge loop
+store b x200 r4 //Remainder
+store b x201 r3 //Quotient
+halt
+.end

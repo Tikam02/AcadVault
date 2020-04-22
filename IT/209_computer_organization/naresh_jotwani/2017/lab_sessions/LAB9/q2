@@ -1,0 +1,15 @@
+.start x20
+.orig x20
+mov b #1 r1
+mov b #1 r2
+LOOP: out #0 r1
+shift b l nc r1 #1
+add b #1 r2
+comp b #8 r2
+JGE LOOP
+JLT RESET
+RESET: mov b #1 r1
+mov b #1 r2
+JMP LOOP
+halt
+.end

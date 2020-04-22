@@ -1,0 +1,6 @@
+.orig x20
+.start x20
+mov b x8f r1
+mov b x8e r2
+and b r1 r2
+.end
