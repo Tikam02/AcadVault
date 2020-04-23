@@ -22,7 +22,7 @@ The project organization has been designed to maximise maintainability and acess
   - `107_calculus` (Course code and name, refrain from using abbreviations)
     - `reference_material` (textbooks, papers, etc.)
     - `ashok_kumar` (Faculty name, refrain from using abbreviations)
-      - `2016` (Year)
+      - `2016` (Year in which you have taken the course)
         - `lecture_notes`
         - `lab_sessions`
         - `tutorial_sessions`
