@@ -1,0 +1,20 @@
+.orig x20
+.start x20
+.clear
+mov w #13 r1 //No.1
+mov w #2 r2 //No.2
+mov w #0 r3
+mov w #0 r5
+mov w r1 r4
+comp w #0 r1
+jeq fall
+comp w #0 r2
+jeq fall
+loop: add w r2 r5
+add w #1 r3
+comp w r3 r1
+jlt loop
+store b x200 r5 //Ans
+fall: store b x200 r5 //Ans if 0 detected
+halt
+.end

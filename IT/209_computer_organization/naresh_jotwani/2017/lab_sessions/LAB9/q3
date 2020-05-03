@@ -1,0 +1,23 @@
+.orig x20
+.start x20
+
+in #00 r1
+in #01 r2
+mov w #0 r15
+
+LOOP: sub w #1 r2
+add w r1 r15
+comp w #0 r2 
+JLT LOOP
+
+mov w r15 r13
+and w xff00 r13
+mov w r15 r14
+and w x00ff r14
+
+shift w r nc r13 x8
+out #02 r13
+out #03 r14
+
+halt
+.end 

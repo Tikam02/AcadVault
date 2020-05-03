@@ -1,0 +1,29 @@
+.orig x20
+.start x20
+
+mov w #4 R1
+mov w #4 R2
+mov w R1 R5
+
+comp w #1 R2
+JEQ ANS
+
+comp w #1 R1
+JEQ ANS
+
+LOOP: mov w #1 R4
+      mov w R1 R3
+      CALL MULTIPLY
+      sub w #1 R2
+      comp w #1 R2
+      JLT LOOP
+
+ANS: halt
+
+MULTIPLY: add w R3 R1
+	  add w #1 R4
+	  comp w R4 R5
+	  JLT MULTIPLY
+RET
+
+.end

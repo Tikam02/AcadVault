@@ -1,0 +1,34 @@
+.orig x20
+.start x20
+.clear
+mov w #5 r1 //No.1-1
+mov w #2 r2 //No.1-2
+mov w #7 r3 //No.2-1
+mov w #2 r4 //No.2-2
+mov w #0 r5
+mov w #0 r6
+mov w #0 r7
+loop: add w r1 r5
+add w #1 r7
+comp w r7 r3
+jlt loop
+
+mov w #0 r7
+
+loop2: add w r2 r6
+add w #1 r7
+comp w r7 r4
+jlt loop2
+
+mov w #0 r7
+mov w r5 r8
+loop3: sub w r6 r8
+add w #1 r7
+comp w r8 r6
+jge loop3
+
+store b x200 r7 //Quotient
+store b x201 r8 //REMAINDER
+
+halt
+.end

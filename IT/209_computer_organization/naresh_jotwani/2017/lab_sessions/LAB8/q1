@@ -1,0 +1,28 @@
+.start x20
+.orig x20
+
+mov w x132 r1
+
+mov w x064 r2
+CALL DIVIDE
+shift w left nc r3 x8
+add w r3 r11
+
+mov w x0A r2
+CALL DIVIDE
+shift w left nc r3 x4
+add w r3 r11
+
+add w r1 r11
+
+halt
+DIVIDE: mov w #0 r3
+comp w r1 r2
+JLT JUMP
+LOOP: sub w r2 r1 
+add w #1 r3
+comp w r1 r2
+JGE LOOP
+JUMP: RET
+
+.end

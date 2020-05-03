@@ -1,0 +1,7 @@
+.orig x20
+.start x20
+MOV W x20,R1
+STORE W X200,R1
+LOAD W X200,R2
+HALT
+.end       

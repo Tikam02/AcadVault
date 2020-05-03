@@ -1,0 +1,42 @@
+.orig x20
+.start x20
+.clear
+mov b #8 r1
+store b x200 r1
+mov b #5 r2
+store b x201 r2
+mov b #4 r3
+store b x202 r3
+mov b #7 r4
+store b x203 r4
+mov b #9 r5
+store b x204 r5
+
+mov b #2 r0
+load b x200 r2
+load b x201 r5
+comp b r2 r5
+jle loop1
+jge loop2
+
+loop1: mov b r2 r5
+load b x200[r0] r2
+add b #1 r0
+comp b #5 r0
+jeq ans
+comp b r2 r5
+jle loop1
+jge loop2
+
+loop2: load b x200[r0] r2
+add b #1 r0
+comp b #5 r0
+jeq ans
+comp b r2 r5
+jle loop1
+jge loop2
+
+ans: store b x300 r5
+
+halt
+.end
