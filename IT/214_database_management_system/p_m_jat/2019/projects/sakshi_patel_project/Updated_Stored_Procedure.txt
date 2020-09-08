@@ -1,0 +1,565 @@
+﻿STORED PROCEDURE
+____________________________________________________________________________
+
+
+
+
+1) Discount Offer : In order to compute if the customer is eligible for discount or not. If yes then how much.
+--------------------------------------------------------------------------------------------------------------------------------
+set search_path to cab_management;
+CREATE FUNCTION discount(ID varchar(20)) RETURNS integer AS $BODY$
+
+
+
+
+DECLARE
+        Cust_ID varchar(20);
+        no_of_rides integer;
+        
+BEGIN
+        SELECT Customer_ID into Cust_ID FROM Cab_Ride WHERE Cab_Ride_ID = ID;
+        SELECT Count(Cab_Ride_ID) into no_of_rides FROM Cab_Ride WHERE Customer_ID = Cust_ID AND (Status = "Ongoing" OR Status = "Finished");
+        if no_of_rides < 4 or MOD(no_of_rides, 25) = 0 then
+                UPDATE Cab_Ride SET Discount_Rate = 25 Where Cab_Ride_ID = ID;
+    return 25;
+        else
+            UPDATE Cab_Ride SET Discount_Rate = 0 Where Cab_Ride_ID = ID;
+                return 0;
+        end if;
+END $BODY$ LANGUAGE 'plpgsql';
+
+
+
+
+____________________________________________________________________________
+
+
+
+
+2) Daily Wages: Calculates the amount earned by a driver in a given day.
+--------------------------------------------------------------------------------------------------------------------------------
+CREATE FUNCTION daily_wage(ID varchar(20), day date) RETURNS float AS $BODY$
+DECLARE
+        total_fare float(2);
+        share float(2);
+BEGIN 
+        SELECT SUM(Total_Fare) into total_fare FROM Car_Ride WHERE Driver_ID = ID;
+        SELECT Percentage_Of_Share into share FROM Driver WHERE Driver_ID = ID;
+        return total_fare * (share/100);
+END $BODY$ LANGUAGE 'plpgsql';
+____________________________________________________________________________
+
+
+
+
+3) Total Company Income: Total turnover of the company in a given month
+--------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION company_fare(month integer, year integer) RETURNS float(2) AS $BODY$
+DECLARE
+        fare float(2);
+        r record;
+BEGIN
+        FOR r IN SELECT c.Total_Fare, d.Percentage_Of_Share FROM Cab_Ride as c JOIN Driver as d ON (c.Driver_ID = d.License_No) WHERE extract(month from c.Timestamp_Current) = month AND extract(year from c.Timestamp_Current) = year
+        LOOP
+                fare := fare + (r.Total_Fare * ((100 - r.Percentage_Of_Share)/100));
+        END LOOP;
+        return fare;
+
+
+
+
+END;
+
+
+
+
+$BODY$ LANGUAGE 'plpgsql';
+
+
+
+
+____________________________________________________________________________
+
+
+
+
+4) Estimated Ride End Time: Estimated Time of the ride
+--------------------------------------------------------------------------------------------------------------------------------
+CREATE FUNCTION Est_time(CID varchar(20)) RETURNS float(2) AS $BODY$
+DECLARE
+        Src varchar(20);
+        Dest varchar(20);
+        SL float(2); 
+        ST float(2);
+        DL float(2); 
+        DT float(2);
+        Est_dist float(2);
+        Est_time float(2);
+        Value timestamp;
+BEGIN
+        SELECT Start_Location, End_Location into Src, Dest FROM Cab_Ride WHERE Cab_Ride_ID = CID;
+        SL := CAST(SUBSTRING(Src, 1, 2) as float(2));
+        ST := CAST(SUBSTRING(Src, 7, 8) as float(2));
+        DL := CAST(SUBSTRING(Dest, 1, 2) as float(2));
+        DT := CAST(SUBSTRING(Dest, 7, 8) as float(2));
+        DL := DL - SL;
+        DT := DT - ST;
+        Est_dist = SQRT((DL*DL) + (DT*DT));
+        Est_dist = Est_dist + 5;
+        Est_time = Est_dist * 5;
+        Est_time = Est_time + 10;
+        Value := ‘CAST(Est_time/60 AS int)’ +‘:‘+‘PRASENAME(Est_time/60,1)’ + ‘:00’;
+        UPDATE Cab_Ride SET Est_ride_end_time = Value WHERE Cab_Ride_ID = CID;
+        RETURN Est_time;
+                                                           
+END $BODY$ LANGUAGE 'plpgsql';
+
+
+
+
+____________________________________________________________________________
+
+
+
+
+5) Estimated Fare : Estimated fare for the ride
+--------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION Est_fare(ID varchar(20)) RETURNS float(2) AS $BODY$
+DECLARE
+        Src varchar(20);
+        Dest varchar(20);
+        SL float(2); 
+        ST float(2);
+        DL float(2); 
+        DT float(2);
+        Est_dist float(2);
+        Est_fare float(2);
+BEGIN
+        SELECT Start_Location, End_Location into Src, Dest FROM Cab_Ride WHERE Cab_Ride_ID = ID;
+        SL := CAST(SUBSTRING(Src, 1, 2) as float(2));
+        ST := CAST(SUBSTRING(Src, 7, 2) as float(2));
+        DL := CAST(SUBSTRING(Dest, 1, 2) as float(2));
+        DT := CAST(SUBSTRING(Dest, 7, 2) as float(2));
+        DL := DL - SL;
+        DT := DT - ST;
+        Est_dist = SQRT((DL*DL) + (DT*DT));
+        Est_dist = Est_dist + 5;
+        Est_fare = Est_dist*10;
+        return Est_fare;
+
+
+
+
+END $BODY$ LANGUAGE 'plpgsql';
+
+
+
+
+____________________________________________________________________________
+
+
+
+
+6) Arrival time: Expected time required by the driver to reach 
+--------------------------------------------------------------------------------------------------------------------------------
+CREATE FUNCTION Expected_arrival_time(CID varchar(20)) RETURNS float(2) AS $BODY$
+DECLARE
+        Src varchar(20);
+        Dest varchar(20);
+        SL float(2); 
+        ST float(2);
+        DL float(2); 
+        DT float(2);
+        DriverID varchar(20);
+        Est_dist float(2);
+        Est_time float(2);
+BEGIN
+        SELECT Start_Location, Driver_ID into Dest, DriverID FROM Cab_Ride WHERE Cab_Ride_ID = CID;
+        SELECT Current_Location into Src FROM Driver WHERE License_No = DriverID;
+        SL := CAST(SUBSTRING(Src, 1, 2) as float(2));
+        ST := CAST(SUBSTRING(Src, 7, 2) as float(2));
+        DL := CAST(SUBSTRING(Dest, 1, 2) as float(2));
+        DT := CAST(SUBSTRING(Dest, 7, 2) as float(2));
+        DL := DL - SL;
+        DT := DT - ST;
+        Est_dist = SQRT((DL*DL) + (DT*DT));
+        Est_dist = Est_dist + 5;
+        Est_time = Est_dist * 5;
+        Est_time = Est_time + 5;
+        return Est_time;
+
+
+
+
+END $BODY$ LANGUAGE 'plpgsql';
+
+
+
+
+____________________________________________________________________________
+
+
+
+
+7) Available_Cars: Number of available cabs near you.
+--------------------------------------------------------------------------------------------------------------------------------
+CREATE FUNCTION Available_Cars(Current_Location varchar(20)) RETURNS integer AS $BODY$
+DECLARE
+        PointA varchar(20);
+        PointB varchar(20);
+        x float(2); 
+        y float(2);
+        a float(2); 
+        b float(2);
+        p float(2);
+        q float(2);
+        m float(2);
+        n float(2);
+        Cust_AreaID integer;
+        DriverID varchar(20);
+        number_of_cars integer;
+        r record;
+        s record;
+BEGIN
+        p := CAST(SUBSTRING(Current_Location, 1, 2) as float(2));
+        q := CAST(SUBSTRING(Current_Location, 7, 2) as float(2));
+        FOR r in SELECT AreaID, GpsA, GpsC FROM Area
+        LOOP
+                x := CAST(SUBSTRING(r.GpsA, 1, 2) as float(2));
+                y := CAST(SUBSTRING(r.GpsA, 7, 2) as float(2));
+                a := CAST(SUBSTRING(r.GpsC, 1, 2) as float(2));
+                b := CAST(SUBSTRING(r.GpsC, 7, 2) as float(2));
+                if p >= x AND p <= a AND q >= y AND q <= b then
+                        Cust_AreaID = r.AreaID;
+                        EXIT; 
+                end if;
+        END LOOP;
+        FOR s in SELECT Current_Location FROM Driver
+        LOOP
+                m := CAST(SUBSTRING(s.Current_Location, 1, 2) as float(2));
+                n := CAST(SUBSTRING(s.Current_Location, 7, 2) as float(2));
+                if m >= x AND m <= a AND n >= y AND n <= b then
+                        number_of_cars = number_of_cars + 1;
+                end if;
+        END LOOP;
+        RETURN number_of_cars;
+END $BODY$ LANGUAGE 'plpgsql';
+
+
+__________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TRIGGERS
+--------------------------------------------------------------------------------------------------------------------------------
+1)
+CREATE TRIGGER change_status_update_area AFTER INSERT ON Cab_Ride 
+        FOR EACH ROW EXECUTE PROCEDURE status_area_func();
+
+
+
+
+CREATE OR REPLACE FUNCTION status_area_func()
+        RETURNS TRIGGER AS $$
+        DECLARE 
+        CID varchar(20);
+        D_ID varchar(20);
+        Date date;
+        c1 refcursor;
+        x float(2);
+        y float(2);
+        aa float(2);
+        b float(2);
+        p1 float(2);
+        q1 float(2);
+        p2 float(2);
+        q2 float(2);
+        AID varchar(20);
+---extract date from timestamp
+BEGIN
+--- Cab Status Update 
+        SELECT NEW.Driver_ID as D_ID FROM Cab_Ride;
+        SELECT date (Cab_Ride.Timestamp_Current) AS Date FROM Cab_Ride WHERE Driver_ID = D_ID;
+        SELECT Cab_ID as CID FROM Assignation WHERE Driver_ID = D_ID AND Assigned_date = date; 
+        UPDATE Cab SET Status="Booked" WHERE Cab_Number_Plate=CID;
+
+
+        p1 := CAST(SUBSTRING(NEW.Start_location,1,2) AS FLOAT(2)) + (CAST(SUBSTRING(NEW.Start_location,4,2) AS FLOAT(2)))/60;
+        q1 := CAST(SUBSTRING(NEW.Start_location,8,2) AS FLOAT(2)) + (CAST(SUBSTRING(NEW.Start_location,11,2) AS FLOAT(2)))/60;
+
+
+ 
+        p2 := CAST(SUBSTRING(NEW.End_location,1,2) AS FLOAT(2)) + (CAST(SUBSTRING(NEW.End_location,4,2) AS FLOAT(2)))/60;
+        q2 := CAST(SUBSTRING(NEW.End_location,8,2) AS FLOAT(2)) + (CAST(SUBSTRING(NEW.End_location,11,2) AS FLOAT(2)))/60;    
+
+
+
+
+        OPEN c1 FOR SELECT 
+        CAST(SUBSTRING(GpsA,1,2) AS FLOAT(2)) + (CAST(SUBSTRING(GpsA,4,2) AS FLOAT(2)))/60,
+        CAST(SUBSTRING(GpsA,8,2) AS FLOAT(2)) + (CAST(SUBSTRING(GpsA,11,2) AS FLOAT(2)))/60,
+        CAST(SUBSTRING(GpsC,1,2) AS FLOAT(2)) + (CAST(SUBSTRING(GpsC,4,2) AS FLOAT(2)))/60,
+        CAST(SUBSTRING(GpsC,8,2) AS FLOAT(2)) + (CAST(SUBSTRING(GpsC,11,2) AS FLOAT(2)))/60,
+        AreaID FROM Area;
+        LOOP
+        FETCH c1 INTO x,y,aa,b,AID;
+        EXIT WHEN NOT FOUND;
+        IF ((p1>x AND p1<aa AND q1>y AND q1<b) OR (p2>x AND p2<aa AND q2>y AND q2<b)) THEN
+                UPDATE Area SET frequency = OLD.frequency + 1 WHERE AreaID = AID;
+        END IF;        
+        END LOOP;
+        CLOSE c1;        
+
+
+
+
+END;
+$$ LANGUAGE ‘plpgsql’
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+____________________________________________________________________________
+
+
+
+
+2) 
+-------------------------------------------------------------------------------------------------------------------------------
+CREATE TRIGGER change_status_update_area AFTER INSERT ON Cab_Ride 
+        FOR EACH ROW EXECUTE PROCEDURE update_func(); 
+
+
+
+
+set search_path to cab_management;
+CREATE OR REPLACE FUNCTION update_func() RETURNS TRIGGER AS $BODY$
+DECLARE
+        record record;
+        new_location varchar(20);
+        count float(2);
+        distance float(2); 
+        surgefactor float(2);
+        fare float(2);
+        driver_loc varchar(30);        
+        counter float(2);        
+        r record;
+        xx float(2); 
+        yy float(2);
+        aa float(2); 
+        bb float(2);
+        pp float(2);
+        qq float(2);
+        dst_area varchar(20);
+        TID varchar(20);
+        CID varchar(12);
+        multiplying factor float(2);
+        
+BEGIN
+--Getting the area name of the destination
+        SELECT * into record FROM Cab_Ride WHERE Cab_Ride_ID = new.Cab_Ride_ID;
+        pp := CAST(SUBSTRING(new.end_location, 1, 2) as float(2));
+        qq := CAST(SUBSTRING(new.end_location, 7, 2) as float(2));
+        FOR r in SELECT AreaID, GpsA, GpsC FROM Area
+        LOOP
+                xx := CAST(SUBSTRING(r.GpsA, 1, 2) as float(2));
+                yy := CAST(SUBSTRING(r.GpsA, 7, 2) as float(2));
+                aa := CAST(SUBSTRING(r.GpsC, 1, 2) as float(2));
+                bb := CAST(SUBSTRING(r.GpsC, 7, 2) as float(2));
+                if pp >= xx AND pp <= aa AND qq >= yy AND qq <= bb then
+                        dst_area := r.AreaID;
+                        EXIT;
+                end if;
+        END LOOP;
+
+
+--Surge factor calculation according to the popularity of the destination area;
+        SELECT RANK() OVER (ORDER BY Frequency ASC) into surgefactor FROM Area WHERE AreaID = dst_area;
+        Surgefactor := 1;
+        IF ((EXTRACT(hour FROM record.Ride_start_time) BETWEEN 11 AND 5))
+        THEN
+                surgefactor := 2*surgefactor;
+        END IF;
+
+
+        UPDATE Cab_Ride SET Surge_factor = surgefactor WHERE Cab_Ride_ID = new.Cab_Ride_ID; 
+
+
+--driver has to go from his current location to the customer’s current location to pick him up for the ride. In the mean time customer can cancel the ride.         
+        SELECT Current_Location into driver_loc FROM Driver WHERE License_No = record.Driver_ID;
+
+
+
+
+        SELECT Expected_arrival_time(new.Cab_Ride_ID) into counter;
+
+
+        While (counter>0 AND (driver_loc NOT LIKE record.Start_Location))
+        LOOP
+             new_location := CAST(CONCAT(CAST(SUBSTRING(driver_loc, 1, 2)as text) , CAST((CAST(SUBSTRING(driver_loc, 4, 2) AS INTEGER)+1) AS text) , CAST(SUBSTRING(driver_loc, 7, 2) as text) , CAST((CAST(SUBSTRING(driver_loc, 10, 2) AS INTEGER)+1) AS text)) as varchar(20));
+                UPDATE Driver SET Current_Location = driver_loc WHERE License_No = record.Driver_ID;
+
+
+                IF (record.Status = 'Cancelled') then 
+                        EXIT;
+                END IF;        
+                counter := counter - 1;
+        END LOOP;        
+        UPDATE Driver SET Current_Location = record.Start_location WHERE License_No = record.Driver_ID;
+        UPDATE Cab_ride SET Status = ‘Ongoing’  WHERE License_No = record.cab_ride_id;
+        
+--Driver reached the source location of the ride and the customer hasn’t cancelled the ride.
+        IF (record.Status = 'Ongoing')
+        THEN
+        count := (EXTRACT(hour FROM record.Est_ride_end_time) + (EXTRACT(minute FROM record.Est_ride_end_time))/60)/5;
+        WHILE ((record.GPS_Location_Current NOT LIKE record.End_Location) AND count>0)
+                LOOP
+                new_location := CAST(CONCAT(CAST(SUBSTRING(GPS_Location_Current, 1, 2)as text) , CAST((CAST(SUBSTRING(GPS_Location_Current, 4, 2) AS INTEGER)+1) AS text) , CAST(SUBSTRING(GPS_Location_Current, 7, 2) as text) , CAST((CAST(SUBSTRING(GPS_Location_Current, 10, 2) AS INTEGER)+1) AS text)) as varchar(20));
+                
+                UPDATE Cab_Ride SET GPS_Location_Current = new_location WHERE Cab_Ride_ID = new.Cab_Ride_ID;
+                UPDATE Driver SET Current_Location = new_location WHERE Cab_Ride = new.Cab_Ride_ID;
+
+
+
+
+                distance := distance + 2;
+                
+                UPDATE Cab_Ride SET Distance_Covered = distance WHERE Cab_Ride_ID = new.Cab_Ride_ID;
+     count := count - 1;        
+                END LOOP;
+
+
+--Ride finished
+        UPDATE Cab_Ride SET GPS_Location_Current = End_Location, Status = 'Finished' WHERE Cab_Ride_ID = new.Cab_Ride_ID; 
+        
+        UPDATE Cab SET Status = 'Available' WHERE Cab_Number_Plate = (SELECT Cab_ID FROM Assignation WHERE Driver_ID = record.Driver_ID);
+
+
+        SELECT Cab_ID into CID FROM Assignation WHERE Driver_ID = record.Driver_ID AND
+extract (day from Assigned_Date) = extract(day from record.Date) AND extract (month from Assigned_Date) = extract(month from record.Date) AND extract (year from Assigned_Date) = extract(year from record.Date);
+        SELECT Cab_Type_ID into TID FROM Cab WHERE Cab_ID = CID;
+        SELECT cost_per_mile into multiplying_factor FROM Cab_Type WHERE Cab_Type_ID = TID;
+        --Discount factor
+        fare := surgefactor*record.distance_covered*80*multiplying_factor*(1-record.Discount_Rate/100);
+
+
+
+
+        UPDATE Cab_Ride SET Total_Fare = fare WHERE Cab_Ride_ID = new.Cab_Ride_ID;                         
+                
+        ELSIF (record.Status = 'Cancelled') then
+
+
+
+
+        UPDATE Cab_Ride SET Total_Fare = 0 WHERE Cab_Ride_ID = new.Cab_Ride_ID; 
+        UPDATE Cab SET Status = "Available" WHERE Cab_Number_Plate = (SELECT Cab_ID FROM Assignation WHERE Driver_ID = record.Driver_ID);
+        END IF;
+        --END LOOP;  
+        RETURN NULL;
+END;
+$BODY$ LANGUAGE 'plpgsql';
+____________________________________________________________________________

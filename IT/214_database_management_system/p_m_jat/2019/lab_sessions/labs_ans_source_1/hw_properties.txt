@@ -1,0 +1,17 @@
+CUDA Device Query...
+There are 1 CUDA devices.
+
+CUDA Device #0
+Device Name: GeForce GTX 680
+Total Global Memory: 2147287040
+Maximum Threads per Block: 1024
+Maximum Threads Dimension in X-axis: 1024
+Maximum Threads Dimension in Y-axis: 1024
+Maximum Threads Dimension in Z-axis: 64
+Maximum Grid Size in X-axis: 2147483647
+Maximum Grid Size in Y-axis: 65535
+Maximum Grid Size in Z-axis: 65535
+Warp Size: 32
+Clock Rate: 1058500
+Shared Memory Per Block: 49152
+Registers Per Block: 65536

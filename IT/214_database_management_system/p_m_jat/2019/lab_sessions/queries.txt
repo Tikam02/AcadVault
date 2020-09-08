@@ -1,0 +1,74 @@
+Reimburesment
+
+SELECT SUM(Maintenance_cost)
+FROM Assignation
+WHERE 	Driver_ID = 3 AND
+	extract(month from Assigned_Date) = 5
+	extract(year from Assigned_Date) = 2018;
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Tracking
+
+SELECT GRP_Location_Current
+FROM Cab_Ride
+WHERE Cab_Ride_ID=5;
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Discount Offer
+
+CREATE FUNCTION discount(ID varchar(20)) RETURNS integer AS $BODY$
+
+DECLARE
+	Cust_ID varchar(20);
+	no_of_rides integer;
+	
+BEGIN
+	SELECT Customer_ID into Cust_ID FROM Cab_Ride WHERE Cab_Ride_ID = ID;
+	SELECT Count(Cab_Ride_ID) into no_of_rides FROM Cab_Ride WHERE Customer_ID = Cust_ID AND Status IS NOT "Cancelled";
+	if no_of_rides < 4 or MOD(no_of_rides, 25) = 0 then
+		return 25;
+	else
+		return 0;
+	end if;
+END $BODY$ LANGUAGE 'plpgsql';
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Number of leaves by a driver
+
+SELECT No_of_leaves 
+FROM Driver
+WHERE License_No = 36;
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Available Cars in the given area
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Daily Wages
+
+CREATE FUNCTION daily_wage(ID varchar(20), day date) RETURNS float AS $BODY$
+DECLARE
+	total_fare float(2);
+	share float(2);
+BEGIN 
+	SELECT SUM(Total_Fare) into total_fare FROM Car_Ride WHERE Driver_ID = ID;
+	SELECT Percentage_Of_Share into share FROM Driver WHERE Driver_ID = ID;
+	return total_fare * (share/100);
+END $BODY$ LANGUAGE 'plpgsql';
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Total Company
+
+CREATE FUNCTION total_company_fare(month integer, year integer) RETURNS float AS $BODY$
+DECLARE
+	fare float(2);
+	r record;
+BEGIN
+	FOR r IN SELECT c.Total_Fare, d.Percentage_Of_Share FROM Cab_Ride as c JOIN Driver as d ON (c.Driver_ID = d.License_No) WHERE extract(month from c.Timestamp_Current) = month AND extract(year from c.Timestamp_Current) = year;
+	LOOP
+	END LOOP

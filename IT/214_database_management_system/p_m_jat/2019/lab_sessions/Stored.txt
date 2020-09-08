@@ -1,0 +1,206 @@
+1)	Cab Ride History
+Create a view containing attributes Driver ID, Driver Name, Start Location, Destination Location, Date, Time
+-------------------------------------------------------------------------------------------------------------------
+CREATE VIEW my_cab_ride_history AS
+SELECT Driver_ID, Payment, Start_Location, Dest_Location, Date FROM cab_ride 
+
+SELECT * FROM my_cab_ride_history WHERE Customer_ID = My_ID;
+___________________________________________________________________________________________________________________
+
+2)	Find all the bad drivers in order to get know whom to fire
+-------------------------------------------------------------------------------------------------------------------
+SELECT * FROM driver WHERE Rating<2 AND No_of_leaves>9;
+___________________________________________________________________________________________________________________
+
+3)	
+-------------------------------------------------------------------------------------------------------------------
+CREATE FUNCTION bad_drivers(min_rate integer, max_leaves integer) RETURNS record AS $BODY$
+DECLARE 
+	rate Driver.Rating%TYPE;
+	leave Driver.No_of_leaves%TYPE;
+	c1 refcursor;
+	ID Driver.License_No%TYPE;
+	  		
+BEGIN 
+	OPEN c1 FOR SELECT Rating, No_of_leaves, License_No INTO rate, leave, ID FROM driver;
+	LOOP 
+		 
+	END LOOP;
+END;
+$BODY$ LANGUAGE plpgsql;
+___________________________________________________________________________________________________________________
+
+4)	Frequently locations
+-------------------------------------------------------------------------------------------------------------------
+___________________________________________________________________________________________________________________
+
+5)	Surge Factor
+-------------------------------------------------------------------------------------------------------------------
+___________________________________________________________________________________________________________________
+
+6)	Available Cars -> trigger 
+-------------------------------------------------------------------------------------------------------------------
+CREATE TRIGGER change_status_update_area AFTER INSERT ON Cab_Ride 
+	FOR EACH ROW EXECUTE PROCEDURE status_area_func();
+
+CREATE OR REPLACE FUNCTION status_area_func()
+	RETURNS TRIGGER AS $$
+DECLARE 
+	ID Cab_Ride.Cab_ID%TYPE;
+	D_ID Cab_Ride.Driver_ID%TYPE;
+	Date date;
+---extract date from timestamp
+BEGIN
+--- Cab Status Update 
+	SELECT NEW.Driver_ID as D_ID FROM Cab_Ride;
+	SELECT date (Cab_Ride.Timestamp_Current) AS Date FROM Cab_Ride WHERE Driver_ID = D_ID;
+	SELECT Cab_ID as ID FROM Assignation WHERE Driver_ID = D_ID AND Assigned_date = date; 
+	UPDATE Cab SET Status="Booked" WHERE Cab_Number_Plate=ID;
+END;
+
+DECLARE
+--- Frequency of Area
+	c1 refcursor;
+	x float(2);
+	y float(2);
+	a float(2);
+	b float(2);
+	---gps1 Area.GpsA%TYPE;
+	---gps2 Area.GpsC%TYPE;
+	p1 float(2);
+	q1 float(2);
+	p2 float(2);
+	q2 float(2);
+	ID varchar(20);	
+BEGIN
+	---SELECT 
+	SET p1 = CAST(SUBSTRING(NEW.Start_location,1,2) AS FLOAT(2)) + (CAST(SUBSTRING(NEW.Start_location,4,2) AS FLOAT(2)))/60;
+	SET q1 = CAST(SUBSTRING(NEW.Start_location,8,2) AS FLOAT(2)) + (CAST(SUBSTRING(NEW.Start_location,11,2) AS FLOAT(2)))/60;
+	---INTO p1,q1 FROM Cab_Ride; 
+
+	---SELECT 
+	SET p2 = CAST(SUBSTRING(NEW.End_location,1,2) AS FLOAT(2)) + (CAST(SUBSTRING(NEW.End_location,4,2) AS FLOAT(2)))/60;
+	SET q2 = CAST(SUBSTRING(NEW.End_location,8,2) AS FLOAT(2)) + (CAST(SUBSTRING(NEW.End_location,11,2) AS FLOAT(2)))/60;
+	---INTO p2,q2 FROM Cab_Ride; 	
+
+	OPEN c1 FOR SELECT 
+	CAST(SUBSTRING(GpsA,1,2) AS FLOAT(2)) + (CAST(SUBSTRING(GpsA,4,2) AS FLOAT(2)))/60,
+	CAST(SUBSTRING(GpsA,8,2) AS FLOAT(2)) + (CAST(SUBSTRING(GpsA,11,2) AS FLOAT(2)))/60,
+	CAST(SUBSTRING(GpsC,1,2) AS FLOAT(2)) + (CAST(SUBSTRING(GpsC,4,2) AS FLOAT(2)))/60,
+	CAST(SUBSTRING(GpsC,8,2) AS FLOAT(2)) + (CAST(SUBSTRING(GpsC,11,2) AS FLOAT(2)))/60,
+	Area_ID FROM Area;
+	
+	FETCH c1 INTO x,y,a,b,ID;
+
+	IF ((p1>x && p1<a && q1>y && q1<b) || (p2>x && p2<a && q2>y && q2<b)) THEN
+		UPDATE Area SET frequency = OLD.frequency + 1 WHERE Area_ID = ID;
+	END IF;	
+	
+	CLOSE c1;	
+
+END;
+$$ LANGUAGE plpgsql; 
+___________________________________________________________________________________________________________________
+
+
+7)	Biggest trigger
+-------------------------------------------------------------------------------------------------------------------
+delimiter //
+CREATE TRIGGER main_trigger AFTER INSERT ON 
+for each row 
+begin
+ declare x int ;
+ if(new.number_of_axies >  0 ) then
+   set x = 1 ;
+   while x < new.number_of_axies do
+     insert into axle (train_id,axle)
+     values
+     (new.train_id,x);
+     set x=x+1;
+    end while ;
+  end if ;
+end;//
+
+delimiter ;
+___________________________________________________________________________________________________________________
+
+
+8) Stored Procedure
+-------------------------------------------------------------------------------------------------------------------
+CREATE TRIGGER change_status_update_area AFTER INSERT ON Cab_Ride 
+	FOR EACH ROW EXECUTE PROCEDURE update_func(); 
+
+CREATE OR REPLACE FUNCTION update_func(ID varchar(20)) RETURNS TRIGGER AS $BODY$
+DECLARE
+	rec record;
+	new_location Cab_Ride.GPS_Location_Current%TYPE;
+	count float(2);
+	distance float(2); 
+	surge_factor float(2);
+	fare float(2);
+	driver_loc Driver.Current_Location%TYPE;	
+	counter float(2);	
+
+BEGIN
+	SET record = SELECT * FROM Cab_Ride WHERE Cab_Ride_ID = ID;
+
+	SET surge_factor = (SELECT RANK() OVER (ORDER BY Frequency ASC) FROM Area WHERE Area_ID = dst_area);
+	
+	IF ((EXTRACT(hour FROM record.Ride_start_time) BETWEEN 11 AND 5))
+	THEN
+		SET surge_factor = 2*surge_factor;
+	END IF;
+
+	UPDATE Cab_Ride SET Surge_factor = surge_factor WHERE Cab_Ride_ID = ID; 
+	
+	SET driver_loc = SELECT Current_Location FROM Driver WHERE License_No = record.Driver_ID;
+
+	SET counter = SELECT Expected_arrival_time(ID);
+	
+	While (driver_loc IS NOT record.Start_location && counter>0)
+	BEGIN
+		SET driver_loc = SUBSTRING(driver_loc, 1, 3) + CAST((CAST(SUBSTRING(driver_loc, 4, 2) AS INTEGER)+1) AS Driver.driver_loc%TYPE) + SUBSTRING(driver_loc, 6, 4) + CAST((CAST(SUBSTRING(driver_loc, 10, 2) AS INTEGER)+1) AS Driver.driver_loc%TYPE);
+		UPDATE Driver SET Current_Location = driver_loc WHERE License_No = record.Driver_ID;
+
+		IF (record.Status = "Cancelled")
+		THEN
+			BREAK;
+		END IF;	
+	END;	
+	UPDATE Driver SET driver_loc = Start_location WHERE License_No = record.Driver_ID;
+
+	IF (record.Status = "Ongoing")
+	THEN
+	SET count = (EXTRACT(hour FROM record.Est_ride_end_time) + (EXTRACT(minute FROM record.Est_ride_end_time))/60)/5;
+	WHILE (record.GPS_Location_Current IS NOT record.End_Location && count>0)
+		BEGIN
+		SET new_location = SUBSTRING(GPS_Location_Current, 1, 3) + CAST((CAST(SUBSTRING(GPS_Location_Current, 4, 2) AS INTEGER)+1) AS Cab_Ride.GPS_Location_Current%TYPE) + SUBSTRING(GPS_Location_Current, 6, 4) + CAST((CAST(SUBSTRING(GPS_Location_Current, 10, 2) AS INTEGER)+1) AS Cab_Ride.GPS_Location_Current%TYPE);
+		
+		UPDATE Cab_Ride SET GPS_Location_Current = new_location WHERE Cab_Ride_ID = ID;
+		UPDATE Driver SET Current_Location = new_location WHERE Cab_Ride = ID;
+
+		SET distance = distance + 2;
+		
+		UPDATE Cab_Ride SET Distance_Covered = distance WHERE Cab_Ride_ID = ID;
+
+		SET count = count - 1;	
+		END;
+	UPDATE Cab_Ride SET GPS_Location_Current = End_Location, Status = "Finished" WHERE Cab_Ride_ID = ID; 
+	
+	UPDATE Cab SET Status = "Available" WHERE Cab_Number_Plate = (SELECT Cab_ID FROM Assignation WHERE Driver_ID = record.Driver_ID);
+
+	----UPDATE Cab_Ride SET Feedback = feedback WHERE Cab_Ride_ID = ID;
+
+	SET fare = surge_factor*distance_covered*80;
+
+	UPDATE Cab_Ride SET Total_Fare = fare WHERE Cab_Ride_ID = ID;			 
+		
+	ELSIF (record.Status = "Cancelled")
+
+	UPDATE Cab_Ride SET Total_Fare = 0 WHERE Cab_Ride_ID = ID; 
+	UPDATE Cab SET Status = "Available" WHERE Cab_Number_Plate = (SELECT Cab_ID FROM Assignation WHERE Driver_ID = record.Driver_ID);
+	END IF;
+	--END LOOP;  
+END;
+$BODY$ LANGUAGE plpgsql;
+___________________________________________________________________________________________________________________

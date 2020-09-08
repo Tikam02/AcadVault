@@ -1,0 +1,126 @@
+DBMS PROJECT
+Group Members:
+Purva Mhasakar – 201601082
+Dhwani Sanmukhani – 201601099
+Riddhi Thakker – 201601124
+
+DDL Script:
+
+create schema cab_management;
+set search_path to cab_management;
+
+create table Cab_Type(
+	Type_ID varchar(20) Primary key,
+	Type_Name varchar(30) NOT NULL,
+	Seating_Capacity integer NOT NULL,
+	Cost_Per_Mile float(2) NOT NULL
+);
+
+create table Cab_Owner(
+	Owner_ID varchar(20) PRIMARY KEY,
+	Owner_Name varchar(30) NOT NULL,
+	Address text NOT NULL,
+	Email varchar(20),
+	Contact_No bigint NOT NULL,
+	Bank_Ac_No varchar(30) NOT NULL
+);
+
+create table Customer(
+	Login_ID varchar(20) PRIMARY KEY,
+	Customer_Name varchar(30) NOT NULL,
+	Contact_No bigint NOT NULL,
+	Address text,
+	Gender char(2),
+	Email varchar(20),
+	Credential_password varchar(20) NOT NULL,
+	Date_Of_Birth date
+);
+
+Create table Area(
+	AreaID varchar(20) PRIMARY KEY,
+	GpsA varchar(20) NOT NULL,
+	GpsB varchar(20) NOT NULL,
+	GpsC  varchar(20) NOT NULL,
+	GpsD varchar(20) NOT NULL,
+           Frequency integer
+);
+
+create table Cab(
+	Cab_Number_Plate varchar(12) PRIMARY KEY,
+	Status text NOT NULL,
+	RC_Book_No text NOT NULL,
+	Is_with_driver char(1) NOT NULL,
+	Cab_Type_ID varchar(20),
+	Owner_ID varchar(20),
+	Rent int NOT NULL,
+	FOREIGN KEY (Cab_Type_ID) REFERENCES Cab_Type(Type_ID)
+	ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (Owner_ID) REFERENCES Cab_Owner(Owner_ID)
+	ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+create table Driver(
+	License_No varchar(20) Primary key,
+	Driver_Name varchar(30) NOT NULL,
+	Contact_No BIGINT NOT NULL,
+	Bank_Ac_No varchar(30) NOT NULL,
+	Is_free_driver char(1) NOT NULL,
+	Rent_per_Mile float(2),
+	Current_Location varchar(30),
+	No_of_working_days integer,
+	No_of_leaves integer,
+	Rating integer,
+	Gender char(2),
+	Exp_yrs integer,
+	Owner_ID varchar(20),
+	Percentage_Of_Share float(2) NOT NULL,
+	Joining_Date date NOT NULL,
+	FOREIGN KEY (Owner_ID) REFERENCES Cab_Owner(Owner_ID)
+	ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+create table Drives(
+	Customer_ID varchar(20),
+	Driver_ID varchar(20),
+	Primary key(Customer_ID, Driver_ID),
+	FOREIGN KEY (Customer_ID) REFERENCES Customer(Login_ID)
+	ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (Driver_ID) REFERENCES Driver(License_No)
+	ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+create table Cab_Ride(
+	Cab_Ride_ID varchar(20) Primary key,
+	Ride_start_time timestamp,
+	Est_ride_end_time timestamp,
+	Start_location varchar(20) NOT NULL,
+	End_location varchar(20) NOT NULL,
+	Surge_factor float(2) NOT NULL,
+	Total_Fare float(2) NOT NULL,
+	Medium_of_payment varchar(20),
+	Customer_ID varchar(20) NOT NULL,
+	Driver_ID varchar(20) NOT NULL,
+	GPS_Location_Current varchar(20),
+	Timestamp_Current timestamp,
+	Distance_Covered float(2),
+	Discount_Rate float(2),
+	Feedback varchar(5),
+	Status text NOT NULL,
+	FOREIGN KEY (Customer_ID, Driver_ID) REFERENCES Drives(Customer_ID, Driver_ID)
+	ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+create table Assignation(
+	Cab_ID varchar(12),
+	Driver_ID varchar(20),
+	Assigned_Date date NOT NULL,
+	Maintenance_cost float(2),
+	Primary key(Cab_ID, Driver_ID, Assigned_Date),
+	FOREIGN KEY(Cab_ID) REFERENCES Cab(Cab_Number_Plate)
+	ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY(Driver_ID) REFERENCES Driver(License_No)
+	ON DELETE CASCADE ON UPDATE CASCADE
+);
+ 
+
+

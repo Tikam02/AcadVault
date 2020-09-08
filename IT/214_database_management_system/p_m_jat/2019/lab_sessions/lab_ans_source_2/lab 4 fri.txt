@@ -1,0 +1,96 @@
+1 a)SELECT * FROM items WHERE stock<reorderlevel
+
+b)SELECT sum(qty*price),invdate FROM (sales NATURAL JOIN salesdetails) GROUP BY invdate
+
+c)SELECT cn,r1.y,s from (select max(ans) as s, y from (select cu."name", sum(qty*price) as ans, extract(year from invdate) as y from  customer as cu join sales as sl on (sl.customerid=cu.custid) natural join salesdetails as sd  group by cu."name", y)as r group by y) as r1
+JOIN
+(select cu."name" as cn, sum(qty*price) as ans, extract(year from invdate) as y from  customer as cu join sales as sl on (sl.customerid=cu.custid) natural join salesdetails as sd  group by cu."name", y) as r2 ON(r1.s=r2.ans)
+
+d)select itemcode,sum(qty) as q from salesdetails group by itemcode order by q DESC OFFSET 1 LIMIT 1;
+
+e)select r2.cust_name,r1.y,r1.max_profit from (select max(s) as max_profit,y FROM (select cu."name", sum(price-averagepurchaseprice) as s,EXTRACT(YEAR FROM invdate) as y  from customer as cu join sales as s on(cu.custid=s.customerid)
+natural join salesdetails as sd  join items as i 
+on(sd.itemcode=i.code)  group by cu."name",y) as r group by y) as r1
+join
+(select cu."name" as cust_name, sum(price-averagepurchaseprice) as s,EXTRACT(YEAR FROM invdate) as y  from customer as cu join sales as s on(cu.custid=s.customerid)
+natural join salesdetails as sd  join items as i 
+on(sd.itemcode=i.code)  group by cu."name",y) as r2 ON(r1.max_profit=r2.s)
+
+f)SELECT * FROM(SELECT max(s) as "max","year" FROM(SELECT sum(qty) as s,extract(YEAR FROM invdate) as "year",items."name" FROM sales natural join salesdetails JOIN items ON(items.code=salesdetails.itemcode) group by items.name,"year")as r group by "year") as r1 JOIN
+(SELECT sum(qty) as s,extract(YEAR FROM invdate) as "year",items."name" FROM sales natural join salesdetails JOIN items ON(items.code=salesdetails.itemcode) group by items.name,"year") as r2 ON(r1."max"=r2.s)
+
+g)SELECT i.*,cu.* FROM items as i LEFT JOIN salesdetails as sd ON(i.code=sd.itemcode) LEFT JOIN sales as sl ON(sd.invno=sl.invno) LEFT JOIN customer as cu ON(cu.custid=sl.customerid)
+
+
+
+2)
+a)SELECT r1.instructorid,r2.instructorname,r2.coursename,r1.acadyear,r1.semester from (SELECT count(courseno),instructorid,semester,acadyear FROM offers group by instructorid,semester,acadyear HAVING count(courseno)>1) as r1
+JOIN
+(SELECT * FROM course as c NATURAL JOIN offers as o NATURAL JOIN instructor as i ) as r2
+ON (r1.instructorid=r2.instructorid and r1.semester=r2.semester and r1.acadyear=r2.acadyear)
+
+b)select * from (course as c left join offers as o on (c.courseno=o.courseno)) except (select * from course as c right join offers as o on (c.courseno=o.courseno));
+
+c)SELECT r1.studentid,"name",r1.t FROM(SELECT sum(credit) as t,studentid,semester from (SELECT * FROM registers as r NATURAL JOIN student as s NATURAL JOIN course as c NATURAL JOIN program as p WHERE p.progname='Btech(CS)' and batch=2007) as r group by studentid,semester  HAVING sum(credit)<10 or sum(credit)>20) as r1
+NATURAL JOIN student as s
+
+d)SELECT r1.studentid,r1."name",count(grade) as no_fail from (SELECT * FROM student as s NATURAL JOIN registers as r WHERE r.grade='FF') as r1 
+group by studentid,"name" HAVING count(grade)>2
+
+e)
+SELECT  studentid from
+(SELECT count(courseno) as cp FROM instructor as i NATURAL JOIN offers as o
+WHERE i.instructorname='P M Jat' and o.acadyear=2007)as r1
+JOIN
+(SELECT count(r.courseno) as cs,studentid FROM registers as r JOIN offers as o ON(r.courseno=o.courseno) NATURAL JOIN instructor as i 
+WHERE i.instructorname='P M Jat' and r.acadyear=2007 group by studentid) as r2 ON(r1.cp=r2.cs) 
+UNION
+SELECT studentid from
+(SELECT count(courseno) as cp FROM instructor as i NATURAL JOIN offers as o
+WHERE i.instructorname='P M Jat' and o.acadyear=2008)as r1
+JOIN
+(SELECT count(r.courseno) as cs,studentid FROM registers as r JOIN offers as o ON(r.courseno=o.courseno) NATURAL JOIN instructor as i 
+WHERE i.instructorname='P M Jat' and r.acadyear=2008 group by studentid) as r2 ON(r1.cp=r2.cs) 
+UNION
+SELECT studentid from
+(SELECT count(courseno) as cp FROM instructor as i NATURAL JOIN offers as o
+WHERE i.instructorname='P M Jat' and o.acadyear=2009)as r1
+JOIN
+(SELECT count(r.courseno) as cs,studentid FROM registers as r JOIN offers as o ON(r.courseno=o.courseno) NATURAL JOIN instructor as i 
+WHERE i.instructorname='P M Jat' and r.acadyear=2009 group by studentid) as r2 ON(r1.cp=r2.cs) 
+UNION
+SELECT studentid from
+(SELECT count(courseno) as cp FROM instructor as i NATURAL JOIN offers as o
+WHERE i.instructorname='P M Jat' and o.acadyear=2010)as r1
+JOIN
+(SELECT count(r.courseno) as cs,studentid FROM registers as r JOIN offers as o ON(r.courseno=o.courseno) NATURAL JOIN instructor as i 
+WHERE i.instructorname='P M Jat' and r.acadyear=2010 group by studentid) as r2 ON(r1.cp=r2.cs) 
+UNION
+SELECT studentid from
+(SELECT count(courseno) as cp FROM instructor as i NATURAL JOIN offers as o
+WHERE i.instructorname='P M Jat' and o.acadyear=2011)as r1
+JOIN
+(SELECT count(r.courseno) as cs,studentid FROM registers as r JOIN offers as o ON(r.courseno=o.courseno) NATURAL JOIN instructor as i 
+WHERE i.instructorname='P M Jat' and r.acadyear=2011 group by studentid) as r2 ON(r1.cp=r2.cs) 
+order by studentid
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+SELECT distinct r.studentid FROM instructor AS i NATURAL JOIN offers AS o NATURAL JOIN registers AS r WHERE i.instructorname='P M Jat' AND r.acadyear=2007 
+
+INTERSECT 
+
+SELECT distinct r.studentid FROM instructor AS i NATURAL JOIN offers AS o NATURAL JOIN registers AS r WHERE i.instructorname='P M Jat' AND r.acadyear=2008
+ 
+INTERSECT 
+
+SELECT distinct r.studentid FROM instructor AS i NATURAL JOIN offers AS o NATURAL JOIN registers AS r WHERE i.instructorname='P M Jat' AND r.acadyear=2009 
+
+INTERSECT 
+
+SELECT distinct r.studentid FROM instructor AS i NATURAL JOIN offers AS o NATURAL JOIN registers AS r WHERE i.instructorname='P M Jat' AND r.acadyear=2010;
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+select unit (select count(coursename) as unit from offers group by instructorname) where instructorname='P M Jat' as t;  
+
+select distinct r.studentid, count(r.studentid) (SELECT r.studentid, r.coursename, r.acadyear FROM instructor AS i NATURAL JOIN offers AS o NATURAL JOIN registers AS r WHERE i.instructorname='P M Jat' AND r.acadyear=2007 ) group by r.studentid where count = t.unit;
