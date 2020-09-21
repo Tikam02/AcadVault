@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "map": "cpp",
-        "memory": "cpp",
-        "utility": "cpp",
-        "iostream": "cpp"
-    }
-}
