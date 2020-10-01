@@ -1,0 +1,93 @@
+﻿Queries
+____________________________________________________________________________
+
+
+
+
+1) The sum of the maintenance cost of a cab , Also display the owner of the cab 
+--------------------------------------------------------------------------------------------------------------------------------
+SELECT c.owner_id, r.cab_id, r.sum from (SELECT cab_id, sum(maintenance_cost) FROM Assignation where extract(month from Assigned_date) = 3 AND extract(year from Assigned_date) = 2017 group by(cab_id)) as r join cab as c on (c.cab_number_plate = r.cab_id);
+______________________________________________________________________
+
+
+2) Cab Ride History: Information of the rides taken by the customer till now.
+--------------------------------------------------------------------------------------------------------------------------------
+CREATE VIEW my_cab_ride_history AS
+SELECT Driver_ID, Total_Fare, Start_Location, End_Location, timestamp_current, Customer_ID FROM cab_ride;
+
+
+
+
+SELECT * FROM my_cab_ride_history WHERE Customer_ID = '1020';
+
+
+______________________________________________________________________
+
+
+3) Driver’s Current Location: To track the location of the driver assigned to the cab ride you are waiting for.
+--------------------------------------------------------------------------------------------------------------------------------
+SELECT Current_Location 
+FROM Driver
+WHERE License_no = (SELECT Driver_ID 
+FROM Cab_Ride
+WHERE Cab_Ride_ID = '1103');
+____________________________________________________________________________
+
+
+4) Count the number of cab rides taken on a particular day
+--------------------------------------------------------------------------------------------------------------------------------
+Select count(cab_ride_id),cab_ride_id
+FROM cab_ride where extract(day from ride_start_time)=6 AND
+extract(month from ride_start_time)=5 AND
+extract(year from ride_start_time)=2018 group by cab_ride_id;
+______________________________________________________________________
+
+
+
+
+5) Reimbursement: Amount spent by the driver on a particular cab assigned to it on that particular month and year.
+--------------------------------------------------------------------------------------------------------------------------------
+SELECT SUM(Maintenance_cost)
+FROM Assignation
+WHERE Driver_ID = '814' AND
+extract(month from Assigned_Date) = 3 AND
+extract(year from Assigned_Date) = 2017;
+____________________________________________________________________________
+
+
+6) Tracking: Current Location updates of the the Cab Ride
+--------------------------------------------------------------------------------------------------------------------------------
+SELECT GPS_Location_Current
+FROM Cab_Ride
+WHERE Cab_Ride_ID='1103';
+____________________________________________________________________________
+
+
+
+
+7) Number of leaves taken by a Driver
+--------------------------------------------------------------------------------------------------------------------------------
+SELECT No_of_leaves 
+FROM Driver
+WHERE License_No = '781';
+____________________________________________________________________________
+
+
+8) Bad Drivers: Find all the drivers with bad performance
+--------------------------------------------------------------------------------------------------------------------------------
+SELECT * 
+FROM driver 
+WHERE Rating<2 AND No_of_leaves>9;
+____________________________________________________________________________
+
+
+9)  Display the no. of times a customer has taken a cab ride
+--------------------------------------------------------------------------------------------------------------------------------
+SELECT customer_id , count(cab_ride_id) as Frequency FROM Cab_Ride group by customer_id;
+______________________________________________________________________
+
+
+10) Count the number of times cab ride was cancelled
+--------------------------------------------------------------------------------------------------------------------------------
+SELECT count("Status") as Number_of_times FROM cab_ride where "Status"='Cancelled'
+______________________________________________________________________

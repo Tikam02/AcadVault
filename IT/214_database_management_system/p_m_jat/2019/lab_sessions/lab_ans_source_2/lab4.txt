@@ -1,0 +1,21 @@
+set search_path to sales;
+SELECT * FROM items WHERE stock < reorderlevel;
+SELECT invdate, sum(qty*price) FROM sales as s JOIN salesdetails as sd ON (s.invno=sd.invno) GROUP BY invdate; 
+SELECT * FROM (SELECT sum(qty*price), custid FROM (salesdetails as sd JOIN sales as s ON (s.invno=sd.invno)) JOIN customer as c ON (s.customerid=c.custid) GROUP BY c.custid) as r1 ORDER BY sum desc LIMIT 1;
+(SELECT sum(qty) FROM salesdetails GROUP BY itemcode ORDER BY sum desc LIMIT 2) EXCEPT (SELECT sum(qty) FROM salesdetails GROUP BY itemcode ORDER BY sum desc LIMIT 1); 
+(SELECT sum(qty) FROM salesdetails GROUP BY itemcode ORDER BY sum desc LIMIT 1 OFFSET 1 ) ; 
+SELECT sum(sd.price-i.averagepurchaseprice), customerid FROM (salesdetails as sd JOIN sales as s ON (sd.invno=s.invno) JOIN items as i ON (sd.itemcode=i.code)) GROUP BY customerid ORDER BY sum desc LIMIT 1;
+SELECT sum(qty), sd.itemcode , extract(year FROM invdate) as year FROM 
+salesdetails as sd JOIN sales as s ON (sd.invno=s.invno) GROUP BY sd.itemcode,
+extract(year FROM invdate) ORDER BY sum desc LIMIT 1;
+SELECT i.code , c.* FROM salesdetails as sd JOIN sales as s ON s.invno=sd.invno JOIN customer as c ON s.customerid=c.custid RIGHT JOIN items as i ON i.code=sd.itemcode;
+
+
+set search_path to acad;
+SELECT distinct i.instructorname FROM (SELECT count(courseno), instructorid FROM offers as o GROUP BY acadyear, semester,instructorid) as t JOIN instructor as i ON (t.instructorid=i.instructorid) WHERE count>1; 
+SELECT * FROM (course as c LEFT JOIN offers as o ON (c.courseno=o.courseno)) EXCEPT (SELECT * FROM course as c RIGHT JOIN offers as o ON (c.courseno=o.courseno));
+
+SELECT * FROM (SELECT s.name, s.studentid,sum(c.credit),s.progid,s.batch FROM course as c JOIN registers as r ON (c.courseno=r.courseno) JOIN student as s ON (s.studentid=r.studentid) GROUP BY s.studentid) as t JOIN program as p ON (t.progid=p.progid) WHERE (t.sum<10 or t.sum>20) and p.progname='Btech(CS)' and t.batch='2007';
+SELECT s1.studentid,s1.name FROM (SELECT count(grade),t.studentid FROM ( SELECT s.studentid,s.name,r.grade FROM registers as r JOIN student as s ON (s.studentid=r.studentid) WHERE grade='FF') as t GROUP BY t.studentid) as t1 JOIN student as s1 ON (s1.studentid=t1.studentid) WHERE count>1;
+SELECT distinct r.studentid FROM instructor as i NATURAL JOIN offers as o NATURAL JOIN registers as r WHERE i.instructorname='P M Jat' AND r.acadyear>=2007 AND r.acadyear<=2012;
+

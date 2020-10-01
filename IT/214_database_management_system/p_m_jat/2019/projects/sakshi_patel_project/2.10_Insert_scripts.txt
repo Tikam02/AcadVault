@@ -1,0 +1,529 @@
+﻿DBMS PROJECT
+Group Members:
+Purva Mhasakar – 201601082
+Dhwani Sanmukhani – 201601099
+Riddhi Thakker – 201601124
+
+
+INSERT Scripts:
+
+INSERT INTO cab_management.cab_type values (100,'Santor',4,7);
+INSERT INTO cab_management.cab_type values (101,'Wagonar',4,10);
+INSERT INTO cab_management.cab_type values (102,'DastunGO',4,6);
+INSERT INTO cab_management.cab_type values (103,'BMWi',2,15);
+INSERT INTO cab_management.cab_type values (104,'Mercedes8',4,1);
+INSERT INTO cab_management.cab_type values (105,'AudiQ7',2,16);
+INSERT INTO cab_management.cab_type values (106,'FordEco',4,6);
+INSERT INTO cab_management.cab_type values (107,'Mahindra',4,7);
+INSERT INTO cab_management.cab_type values (108,'Honda',4,7);
+INSERT INTO cab_management.cab_type values (109,'Ford',3,8);
+INSERT INTO cab_management.cab_type values (110,'Chevrolet ',3,12);
+INSERT INTO cab_management.cab_type values (111,'Maruti',3,5);
+INSERT INTO cab_management.cab_type values (112,'Hyundai',4,13);
+INSERT INTO cab_management.cab_type values (113,'Mitsubhishi',3,14);
+INSERT INTO cab_management.cab_type values (114,'Nissan',3,10);
+INSERT INTO cab_management.cab_type values (115,'Suzuki',3,3);
+INSERT INTO cab_management.cab_type values (116,'Tata',2,4);
+INSERT INTO cab_management.cab_type values (117,'ScorpioMhawk',4,13);
+INSERT INTO cab_management.cab_type values (118,'CRV',4,17);
+INSERT INTO cab_management.cab_type values (119,'Endeavour',4,5);
+INSERT INTO cab_management.cab_type values (120,'Captiva',3,5);
+INSERT INTO cab_management.cab_type values (121,'Gypsy',4,7);
+INSERT INTO cab_management.cab_type values (122,'Tucson',3,3);
+INSERT INTO cab_management.cab_type values (123,'Pajero',2,7);
+INSERT INTO cab_management.cab_type values (124,'Xtrail',3,5);
+INSERT INTO cab_management.cab_type values (125,'GrandVitara',3,14);
+INSERT INTO cab_management.cab_type values (126,'Safaridicor',3,3);
+INSERT INTO cab_management.cab_type values (127,'Montero',2,6);
+INSERT INTO cab_management.cab_type values (128,'Fusion',3,13);
+INSERT INTO cab_management.cab_type values (129,'Reva',2,18);
+INSERT INTO cab_management.cab_type values (130,'Omni',3,9);
+INSERT INTO cab_management.cab_type values (131,'Versa',4,13);
+INSERT INTO cab_management.cab_type values (132,'Aveo',4,3);
+INSERT INTO cab_management.cab_type values (133,'SRV',4,8);
+INSERT INTO cab_management.cab_type values (134,'Fiesta',4,1);
+INSERT INTO cab_management.cab_type values (135,'Ikon',2,11);
+INSERT INTO cab_management.cab_type values (136,'Ambassador',2,6);
+INSERT INTO cab_management.cab_type values (137,'Accent',3,3);
+INSERT INTO cab_management.cab_type values (138,'Verna',3,1);
+INSERT INTO cab_management.cab_type values (139,'CityZX',3,10);
+INSERT INTO cab_management.cab_type values (140,'Logan ',2,6);
+INSERT INTO cab_management.cab_type values (141,'Dzire',4,5);
+INSERT INTO cab_management.cab_type values (142,'SX4',4,8);
+INSERT INTO cab_management.cab_type values (143,'IndigoCS',4,10);
+INSERT INTO cab_management.cab_type values (144,'Indigo',3,10);
+INSERT INTO cab_management.cab_type values (145,'civic',3,16);
+INSERT INTO cab_management.cab_type values (146,'Elantra',2,9);
+INSERT INTO cab_management.cab_type values (147,'Cedia',3,10);
+INSERT INTO cab_management.cab_type values (148,'Octavia',3,3);
+INSERT INTO cab_management.cab_type values (149,'Corolla',3,18);
+INSERT INTO cab_management.cab_type values (150,'Accord',4,2);
+
+
+
+
+
+
+
+
+
+
+INSERT INTO cab_management.customer values(1000,'Felisha ',930237620,'otlo64gzo7fzcw0rsc','M','M@','M@','3/22/1963');
+INSERT INTO cab_management.customer values(1001,'Thalia ',913838719,'bxhe4jfjstn2c1m8s6','M','M@','M@','3/22/1953');
+INSERT INTO cab_management.customer values(1002,'Linnea ',912051477,'kua3y1adzhjofi7rvm','M','M@','M@','6/5/1979');
+INSERT INTO cab_management.customer values(1003,'Margarite ',978628836,'i01424vdts5sn8rrrl','M','M@','M@','3/26/1959');
+INSERT INTO cab_management.customer values(1004,'Merideth ',979604280,'0cy7w6wq6wtjmd6goi','M','M@','M@','11/17/1963');
+INSERT INTO cab_management.customer values(1005,'Kirby ',954448079,'3n9mgj9h1b59i6pzua','M','M@','M@','1/12/1980');
+INSERT INTO cab_management.customer values(1006,'Armanda ',919644907,'tp1er588me3datiyie','M','M@','M@','5/21/1967');
+INSERT INTO cab_management.customer values(1007,'Lea ',917647282,'532pj1sq7rylk3ckv1','M','M@','M@','2/11/1981');
+INSERT INTO cab_management.customer values(1008,'April ',999299900,'t53mv1w7dj3g83t8qu','M','M@','M@','1/26/1970');
+INSERT INTO cab_management.customer values(1009,'Rosanna ',932123099,'7sphknku2tx7q6f165','M','M@','M@','3/3/1973');
+INSERT INTO cab_management.customer values(1010,'Salena ',970162074,'vl9o6df83bvq9rut2d','M','M@','M@','7/28/1969');
+INSERT INTO cab_management.customer values(1011,'Tegan ',945157390,'19uwm6vjipsg2bqtzf','M','M@','M@','6/6/1978');
+INSERT INTO cab_management.customer values(1012,'Many ',996828275,'fzn03q5wknj78f3sxk','M','M@','M@','11/23/1956');
+INSERT INTO cab_management.customer values(1013,'Lindsay ',924256626,'kglse7oqshd2ydi3g5','M','M@','M@','8/3/1984');
+INSERT INTO cab_management.customer values(1014,'Justa ',938410032,'glqr24rrtiex9ap032','M','M@','M@','2/7/1960');
+INSERT INTO cab_management.customer values(1015,'Nicky ',943066085,'6pd2c4sdo2sdyarp7b','M','M@','M@','5/9/1974');
+INSERT INTO cab_management.customer values(1016,'Dacia ',912379359,'tliirgl7r1vw4eetpe','M','M@','M@','1/1/1961');
+INSERT INTO cab_management.customer values(1017,'Rosia ',904442186,'yeoeo8jqy6dpuggxk0','M','M@','M@','5/12/1979');
+INSERT INTO cab_management.customer values(1018,'Casey ',986853846,'fefwtv529b8i19jmdd','M','M@','M@','10/15/1979');
+INSERT INTO cab_management.customer values(1019,'Karine ',923522807,'7kkt9r902jkl1p8lqr','M','M@','M@','6/23/1976');
+INSERT INTO cab_management.customer values(1020,'Stanton ',904681646,'1fxrzp6sy2ui89k9tl','M','M@','M@','12/15/1951');
+INSERT INTO cab_management.customer values(1021,'Stasia ',961472919,'ugx16scl02v6ts2vu2','M','M@','M@','1/8/1959');
+INSERT INTO cab_management.customer values(1022,'Yu ',975263947,'c8qqoxsxskven6mph6','M','M@','M@','9/8/1971');
+INSERT INTO cab_management.customer values(1023,'Sandie ',960586642,'3nut2cs4l6baqsq4se','M','M@','M@','8/22/1976');
+INSERT INTO cab_management.customer values(1024,'Ward ',957589057,'9svovfvz1qci03mt21','M','M@','M@','3/7/1967');
+INSERT INTO cab_management.customer values(1025,'Deanna ',937419860,'378l1u9g8xfwd6i0rt','M','M@','M@','6/10/1962');
+INSERT INTO cab_management.customer values(1026,'Lavern ',940939619,'yw4ed4ffeqnlr1e7hb','M','M@','M@','1/11/1954');
+INSERT INTO cab_management.customer values(1027,'George ',936270495,'o4jaaba3sj40o7gojc','M','M@','M@','12/9/1975');
+INSERT INTO cab_management.customer values(1028,'Carmel ',935295993,'a9g0qcqjtd1kg2iv8b','M','M@','M@','12/5/1954');
+INSERT INTO cab_management.customer values(1029,'Leif ',966498490,'qfvqm6rmc5o1n0mn5h','M','M@','M@','12/11/1954');
+INSERT INTO cab_management.customer values(1030,'Warren ',967183428,'aw5u4rjytk9t4b8ha4','M','M@','M@','9/12/1959');
+INSERT INTO cab_management.customer values(1031,'Esther ',973427107,'meo58lz2jvh9ebtiom','M','M@','M@','2/15/1967');
+INSERT INTO cab_management.customer values(1032,'Man ',999643772,'5fy22s4m12iym1s2bw','M','M@','M@','11/18/1954');
+INSERT INTO cab_management.customer values(1033,'Louis ',964152630,'8wo9m1kekzcqrod8d3','M','M@','M@','9/4/1981');
+INSERT INTO cab_management.customer values(1034,'Jenette ',919735545,'zf3xxpkmoea1bwdl9x','M','M@','M@','7/16/1981');
+INSERT INTO cab_management.customer values(1035,'Samual ',986249681,'zdqsqhlren7qyo6i51','M','M@','M@','4/21/1959');
+INSERT INTO cab_management.customer values(1036,'Linnea ',952760937,'57wl4u4txah39t85el','M','M@','M@','1/17/1957');
+INSERT INTO cab_management.customer values(1037,'Roscoe ',939747400,'8wxciz0lyz8q63nyrp','M','M@','M@','10/13/1955');
+INSERT INTO cab_management.customer values(1038,'Stuart ',954839621,'zvnrpfbcp4b2zh7wep','M','M@','M@','5/18/1960');
+INSERT INTO cab_management.customer values(1039,'Kimi ',989561077,'l7ayfe7wxfjangmakn','M','M@','M@','4/7/1950');
+INSERT INTO cab_management.customer values(1040,'Digna ',924628149,'1h720wkor1aa464a9b','M','M@','M@','1/8/1983');
+INSERT INTO cab_management.customer values(1041,'Roseanne ',900682853,'uvjx5zvjvlbjs9mhid','M','M@','M@','11/2/1954');
+INSERT INTO cab_management.customer values(1042,'Diedra ',914972694,'u1n5ujbriufd3e8vlb','M','M@','M@','11/9/1964');
+INSERT INTO cab_management.customer values(1043,'Carrol ',918889861,'g6semtsozfkt59dab4','M','M@','M@','9/26/1964');
+INSERT INTO cab_management.customer values(1044,'Odilia ',952617291,'r1u0w7k9rippjwup3k','M','M@','M@','5/26/1950');
+INSERT INTO cab_management.customer values(1045,'Bart ',990029173,'pd2k3288hm241uc7v7','M','M@','M@','6/9/1979');
+INSERT INTO cab_management.customer values(1046,'Royal ',967332232,'1pmz4u96gdwz2cougz','M','M@','M@','3/16/1968');
+INSERT INTO cab_management.customer values(1047,'Rhoda ',933797986,'1u1xjckl2mi5zpmsoq','M','M@','M@','5/14/1974');
+INSERT INTO cab_management.customer values(1048,'Danilo ',903886367,'kzb93a2xol0rjpzbdy','M','M@','M@','9/21/1957');
+INSERT INTO cab_management.customer values(1049,'Manuel ',907112524,'6arq1w3iwtub81wn51','M','M@','M@','2/21/1964');
+INSERT INTO cab_management.customer values(1050,'Melody',954723987,'pojj0457wscydap37p','M','M@','M@','6/27/1977');
+INSERT INTO cab_management.customer values(1051,'Carey',952520595,'4y6nxucudprumonbip','M','M@','M@','11/4/1981');
+INSERT INTO cab_management.customer values(1052,'Horton',968643990,'qpdm9c749sobag4u1l','M','M@','M@','9/17/1952');
+INSERT INTO cab_management.customer values(1053,'Inge',986632929,'k2vnrms522lllpzdmw','M','M@','M@','1/3/1971');
+INSERT INTO cab_management.customer values(1054,'Wes',967554950,'8iqd3myld8bf89j8mo','M','M@','M@','5/4/1968');
+INSERT INTO cab_management.customer values(1055,'Nil',992130797,'5otc28ul5940hjlasu','M','M@','M@','1/12/1969');
+INSERT INTO cab_management.customer values(1056,'Shea',981945824,'2xt8lez6mqinc1j6nq','M','M@','M@','6/11/1975');
+INSERT INTO cab_management.customer values(1057,'Mirna',996903494,'2sitfg9isot7rhc4s0','M','M@','M@','9/15/1973');
+INSERT INTO cab_management.customer values(1058,'Dannel',915545566,'6wbts4v3uzglt6882s','M','M@','M@','5/2/1966');
+INSERT INTO cab_management.customer values(1059,'Pennie',972796874,'l3j9kmqinyf3r0ny8q','M','M@','M@','2/15/1950');
+INSERT INTO cab_management.customer values(1060,'Maxwell',905321332,'xi9w66lq67iit7tnbi','M','M@','M@','6/10/1953');
+INSERT INTO cab_management.customer values(1061,'Lenka',946795468,'bbg2kbu70f9qs09219','M','M@','M@','2/27/1978');
+INSERT INTO cab_management.customer values(1062,'Lucais',994268332,'m5n1sehi22929s7vah','M','M@','M@','4/3/1979');
+INSERT INTO cab_management.customer values(1063,'Alfonso',955461723,'8pb4rocwtq1h40x00k','M','M@','M@','10/4/1956');
+INSERT INTO cab_management.customer values(1064,'Alleyn',972683082,'b72hqbnkuewa0kqqgd','M','M@','M@','12/6/1961');
+INSERT INTO cab_management.customer values(1065,'Johan',962139838,'uhein6m50qyedbv76o','M','M@','M@','7/26/1951');
+INSERT INTO cab_management.customer values(1066,'Caryl',929174350,'zaehxaycjcojlgnmwz','M','M@','M@','6/15/1963');
+INSERT INTO cab_management.customer values(1067,'Malanie',934439478,'9ltj77cq2ouuwy8pau','M','M@','M@','12/14/1970');
+INSERT INTO cab_management.customer values(1068,'Fiona',997883324,'5hiul8v28a79y2la1b','M','M@','M@','1/3/1981');
+INSERT INTO cab_management.customer values(1069,'Inga',999623356,'px7qpfgj19zbffk0gf','M','M@','M@','6/17/1954');
+INSERT INTO cab_management.customer values(1070,'Bartholomew',966426495,'qshod1cuhwydg139oe','M','M@','M@','1/11/1958');
+INSERT INTO cab_management.customer values(1071,'Demott',945250467,'3v9pihgid62eslj7ds','M','M@','M@','11/12/1962');
+INSERT INTO cab_management.customer values(1072,'Wernher',904188654,'0fxvgop74ejtm69kg8','M','M@','M@','1/8/1961');
+INSERT INTO cab_management.customer values(1073,'Eadith',916578632,'jca9yuire3clthy9j6','M','M@','M@','2/12/1961');
+INSERT INTO cab_management.customer values(1074,'Bruce',988707718,'u1w1g6mylf9hcqc5f5','M','M@','M@','3/18/1956');
+INSERT INTO cab_management.customer values(1075,'Jeffie',979279653,'kht7r6c4iczu7p4fmr','M','M@','M@','2/26/1968');
+INSERT INTO cab_management.customer values(1076,'Hadlee',979841772,'n730ug8y2yq4rb99nx','M','M@','M@','5/27/1971');
+INSERT INTO cab_management.customer values(1077,'Hanna',958501839,'zh4fs3yd6kso5dk5y4','M','M@','M@','7/10/1956');
+INSERT INTO cab_management.customer values(1078,'Spence',921504592,'kky6eh2ayv95e0qrx9','M','M@','M@','5/3/1960');
+INSERT INTO cab_management.customer values(1079,'Jammal',923089331,'0f5l8kix7sa7i75blr','M','M@','M@','3/5/1975');
+INSERT INTO cab_management.customer values(1080,'Juana',900433267,'5elkybcu249ifwnvwo','M','M@','M@','2/11/1962');
+INSERT INTO cab_management.customer values(1081,'Cordell',952576520,'xnsqxl7zrboksq13pf','M','M@','M@','9/4/1982');
+INSERT INTO cab_management.customer values(1082,'Odell',951645009,'r4udbnn9udhb3prtew','M','M@','M@','4/7/1977');
+INSERT INTO cab_management.customer values(1083,'Lind',953069929,'81ia71gpo3oe3sc99j','M','M@','M@','2/4/1950');
+INSERT INTO cab_management.customer values(1084,'Ginelle',916067747,'1qmlu4e06i2cuqsztc','M','M@','M@','1/11/1966');
+INSERT INTO cab_management.customer values(1085,'Delia',981348833,'gz6z90ua6hkdt8keud','M','M@','M@','8/21/1963');
+INSERT INTO cab_management.customer values(1086,'Ofelia',949980314,'uzm1wxfekqe8jln7hd','M','M@','M@','6/14/1950');
+INSERT INTO cab_management.customer values(1087,'Torin',932955679,'zm7kd7uj8mj4o12bmu','M','M@','M@','3/8/1958');
+INSERT INTO cab_management.customer values(1088,'Pascal',945289403,'4grdvvdspr3d9fw3vw','M','M@','M@','1/22/1961');
+INSERT INTO cab_management.customer values(1089,'Erv',934285510,'7a73x06quu6p0ztaa8','M','M@','M@','12/20/1972');
+INSERT INTO cab_management.customer values(1090,'Josselyn',949899141,'n8698339u68chkwvdb','M','M@','M@','9/4/1958');
+INSERT INTO cab_management.customer values(1091,'Shanan',908022358,'bebl0spm0sd93360v1','M','M@','M@','5/7/1951');
+INSERT INTO cab_management.customer values(1092,'Kristan',978511280,'7py4emhu2qyvx57xqr','M','M@','M@','10/9/1980');
+INSERT INTO cab_management.customer values(1093,'Gherardo',993584576,'j7el1tv3it8s4koenz','M','M@','M@','6/3/1958');
+INSERT INTO cab_management.customer values(1094,'Stace',960237412,'rn5z7v1g5puyusp46b','M','M@','M@','7/21/1970');
+INSERT INTO cab_management.customer values(1095,'Elisabeth',921157471,'woe1mtjhqh27x1d46s','M','M@','M@','8/15/1956');
+INSERT INTO cab_management.customer values(1096,'Cheslie',993446284,'szifa5k23zcalooyu4','M','M@','M@','8/18/1960');
+INSERT INTO cab_management.customer values(1097,'Valentia',970055081,'2l75ff5ij5esikcmwa','M','M@','M@','10/28/1969');
+INSERT INTO cab_management.customer values(1098,'Inglebert',937562814,'u6ugqpfix25d5uo18h','M','M@','M@','8/25/1979');
+INSERT INTO cab_management.customer values(1099,'Valle',931442636,'gy8fipl7uvbtgm85e0','M','M@','M@','8/25/1965');
+INSERT INTO cab_management.customer values(1100,'Dani',991157019,'kec8kn4mbpao1ipxvk','M','M@','M@','12/19/1955');
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO cab_management.cab_owner values(1,'Carisa ','2odua5alubz2ogzy97','dbms@gmail.com',941379245,9918206607074);
+INSERT INTO cab_management.cab_owner values(2,'Tuyet ','m7c2go8uvt1hilw8l9','dbms@gmail.com',938820814,9519546528648);
+INSERT INTO cab_management.cab_owner values(3,'Mikaela ','5zranapontnmrjxqt2','dbms@gmail.com',959018446,7092591594869);
+INSERT INTO cab_management.cab_owner values(4,'Margy ','fzaqlzj7d1h61an9r5','dbms@gmail.com',996479662,0032626764127);
+INSERT INTO cab_management.cab_owner values(5,'Vivan ','b3nqjs2m7hq0rxtzih','dbms@gmail.com',999249678,3691285970677);
+INSERT INTO cab_management.cab_owner values(6,'Kizzy ','2mt0ujeys0oufb4n86','dbms@gmail.com',900345948,9291579547136);
+INSERT INTO cab_management.cab_owner values(7,'Andres ','c7nalotj340qsla5yt','dbms@gmail.com',904248747,3275038251208);
+INSERT INTO cab_management.cab_owner values(8,'Alexia ','ob8c0f8yc0eur2hspy','dbms@gmail.com',917991818,9656656492959);
+INSERT INTO cab_management.cab_owner values(9,'Lynnette ','rprcuwsgrbks4596il','dbms@gmail.com',952685667,3128024433095);
+INSERT INTO cab_management.cab_owner values(10,'Stefany ','k9xd1nhbz1t3oj14zw','dbms@gmail.com',974839542,6833419488894);
+INSERT INTO cab_management.cab_owner values(11,'Piper ','u8641z8ggwoq0b4quy','dbms@gmail.com',911955029,5051223675034);
+INSERT INTO cab_management.cab_owner values(12,'Theron ','3ki9tsuz1fjnnllm7q','dbms@gmail.com',900850991,2128319852517);
+INSERT INTO cab_management.cab_owner values(13,'Glynda ','cb33sy119perrhjc5f','dbms@gmail.com',974678485,4286236886708);
+INSERT INTO cab_management.cab_owner values(14,'Kayla ','l1sbkzb33ge2gedrwe','dbms@gmail.com',908801430,3328232166463);
+INSERT INTO cab_management.cab_owner values(15,'Celia ','e1iopxi5bcpde53dku','dbms@gmail.com',947809441,1102143893892);
+INSERT INTO cab_management.cab_owner values(16,'Willie ','n6ghz6dv3kdle7e6nv','dbms@gmail.com',953398389,2089500795514);
+INSERT INTO cab_management.cab_owner values(17,'Tajuana ','qfywu8p8m2zhhofirm','dbms@gmail.com',981985995,2920643921456);
+INSERT INTO cab_management.cab_owner values(18,'Mazie ','18yh7d1qc1638voriu','dbms@gmail.com',904683750,8948051168552);
+INSERT INTO cab_management.cab_owner values(19,'Faustino ','sse2zenmp2xdyoe7rt','dbms@gmail.com',950254878,4991053888561);
+INSERT INTO cab_management.cab_owner values(20,'Reinaldo ','kgsr7lix69w1780c5n','dbms@gmail.com',953179502,4043191007710);
+INSERT INTO cab_management.cab_owner values(21,'Yevette ','udbyijsobz2l6yfsj9','dbms@gmail.com',970851061,3976223060308);
+INSERT INTO cab_management.cab_owner values(22,'Nada ','7l4gzfkeqllys1pl62','dbms@gmail.com',913680389,5909173292641);
+INSERT INTO cab_management.cab_owner values(23,'Darcie ','d1xtmyjsxvklqvmgmn','dbms@gmail.com',903154125,2200259531820);
+INSERT INTO cab_management.cab_owner values(24,'Nerissa ','799dlgtude49qc7tfc','dbms@gmail.com',954930990,9488585062914);
+INSERT INTO cab_management.cab_owner values(25,'Magnolia ','sv3uhfnn9w1108qz5h','dbms@gmail.com',934393826,9334990978893);
+INSERT INTO cab_management.cab_owner values(26,'Yuk ','6cd84t7ilgocqmb9ef','dbms@gmail.com',976877001,8533422577131);
+INSERT INTO cab_management.cab_owner values(27,'Hedy ','rsjavrwfj6yqh5slhg','dbms@gmail.com',976604401,7246581760652);
+INSERT INTO cab_management.cab_owner values(28,'Claris ','5ut6nh2ufnltu0367u','dbms@gmail.com',992550143,0905808592364);
+INSERT INTO cab_management.cab_owner values(29,'Claud ','flmf0qe4xzdx0y52dr','dbms@gmail.com',979068199,7803164262916);
+INSERT INTO cab_management.cab_owner values(30,'Meagan ','envar0fhma2wtn9gjy','dbms@gmail.com',917918828,9147327910570);
+INSERT INTO cab_management.cab_owner values(31,'Madie ','q7i92dr968hcnc7640','dbms@gmail.com',907838081,2864640956961);
+INSERT INTO cab_management.cab_owner values(32,'Alverta ','6kfi0hjvxr00ohot4p','dbms@gmail.com',947254882,5514424774531);
+INSERT INTO cab_management.cab_owner values(33,'Francoise ','kbiu6pm5a46sqliodg','dbms@gmail.com',967601311,6574822913472);
+INSERT INTO cab_management.cab_owner values(34,'Kyoko ','hq9iuh4jxps9adoh6u','dbms@gmail.com',921268296,8006270674340);
+INSERT INTO cab_management.cab_owner values(35,'Samara ','z59u6z1qtfbv4m5v33','dbms@gmail.com',912419971,4576999378473);
+INSERT INTO cab_management.cab_owner values(36,'Shaun ','qxjk3x0jkgf24agatb','dbms@gmail.com',934703240,6128714528178);
+INSERT INTO cab_management.cab_owner values(37,'Roberto ','pl74g7juwya4ccdg9j','dbms@gmail.com',974244702,0047998508795);
+INSERT INTO cab_management.cab_owner values(38,'Wilbert ','79urqzbiqv9zt8tp8r','dbms@gmail.com',933121447,5439497139909);
+INSERT INTO cab_management.cab_owner values(39,'Janay ','seq3v2z94kh6hqxkal','dbms@gmail.com',924482286,7639870826158);
+INSERT INTO cab_management.cab_owner values(40,'Amie ','jvm1717803txvadypo','dbms@gmail.com',957434218,0410148355040);
+INSERT INTO cab_management.cab_owner values(41,'Regan ','zzmnckzkti1746bd44','dbms@gmail.com',999918953,9395888987302);
+INSERT INTO cab_management.cab_owner values(42,'Janyce ','qcco0cqvstqpoklbib','dbms@gmail.com',975994022,4589819181373);
+INSERT INTO cab_management.cab_owner values(43,'Markita ','scrvps6v2oi8op81b2','dbms@gmail.com',925371343,8697590381346);
+INSERT INTO cab_management.cab_owner values(44,'Lory ','wxwc237k7d082cubki','dbms@gmail.com',948534732,7255615361689);
+INSERT INTO cab_management.cab_owner values(45,'Katia ','j81xgh7kt8p9tv98yp','dbms@gmail.com',939032566,8089882476911);
+INSERT INTO cab_management.cab_owner values(46,'Alesha ','9orjfj7ytz7zlghksc','dbms@gmail.com',926880938,8939174839299);
+INSERT INTO cab_management.cab_owner values(47,'Olen ','u4bhbn5qehlaqmgihf','dbms@gmail.com',913935297,6257369996813);
+INSERT INTO cab_management.cab_owner values(48,'Lou ','b6u91zm93kvxkuj6qx','dbms@gmail.com',947889551,9865252082762);
+INSERT INTO cab_management.cab_owner values(49,'Cory ','7rcstebc864xom5b2n','dbms@gmail.com',951062087,9946367991183);
+INSERT INTO cab_management.cab_owner values(50,'Penney ','34mfr0cs8z3r2dl0vz','dbms@gmail.com',943597882,5953642854402);
+
+
+
+
+INSERT INTO cab_management.driver values(1001,'Carisa ',941379245,9918206607074,'N',4,'39 15,26 35',0,24,1,'M',15,NULL,70,'7/9/1950');
+INSERT INTO cab_management.driver values(1012,'Stefany ',974839542,6833419488894,'N',9,'67 30,84 54',0,9,2,'M',13,NULL,70,'12/9/1953');
+INSERT INTO cab_management.driver values(1023,'Piper ',911955029,5051223675034,'N',11,'8 11,90 39',0,12,1,'M',10,NULL,65,'2/28/1964');
+INSERT INTO cab_management.driver values(1034,'Theron ',900850991,2128319852517,'N',3,'83 75,70 43',0,11,1,'M',8,NULL,65,'5/2/1964');
+INSERT INTO cab_management.driver values(1045,'Glynda ',974678485,4286236886708,'N',2,'10 5,35 90',0,24,4,'M',7,NULL,65,'9/25/1957');
+INSERT INTO cab_management.driver values(1056,'Kayla ',908801430,3328232166463,'N',5,'79 65,25 34',0,2,4,'M',20,NULL,70,'5/10/1981');
+INSERT INTO cab_management.driver values(1067,'Celia ',947809441,1102143893892,'N',12,'19 5,19 45',0,11,4,'M',16,NULL,70,'9/9/1954');
+INSERT INTO cab_management.driver values(1078,'Willie ',953398389,2089500795514,'N',11,'39 24,41 67',0,5,1,'M',13,NULL,70,'7/5/1973');
+INSERT INTO cab_management.driver values(1089,'Tajuana ',981985995,2920643921456,'N',4,'20 89,13 7',0,7,4,'M',16,NULL,70,'1/6/1967');
+
+
+INSERT INTO cab_management.driver values(11,'Mazie ',904683750,8948051168552,'N',12,'57 62,25 72',0,26,3,'M',2,NULL,60,'11/9/1975');
+INSERT INTO cab_management.driver values(121,'Adelia ',920188814,3073930203916,'N',12,'38 14,43 4',0,9,2,'M',10,NULL,65,'8/12/1961');
+INSERT INTO cab_management.driver values(132,'Ethel ',944223663,6029874313500,'N',6,'33 77,25 8',0,5,4,'M',1,NULL,60,'4/19/1970');
+INSERT INTO cab_management.driver values(143,'Chang ',943554361,3181773993801,'N',1,'41 44,16 47',0,1,4,'M',8,NULL,65,'10/5/1982');
+INSERT INTO cab_management.driver values(154,'Yolando ',945340307,7713651193918,'N',9,'9 36,77 16',0,2,4,'M',9,NULL,65,'5/1/1973');
+INSERT INTO cab_management.driver values(165,'Jaqueline ',929345233,7882165867883,'N',12,'40 9,15 25',0,18,4,'M',12,NULL,70,'7/22/1973');
+INSERT INTO cab_management.driver values(176,'Rubie ',954477631,5065856040881,'N',1,'10 22,82 90',0,25,1,'M',9,NULL,65,'11/5/1978');
+INSERT INTO cab_management.driver values(187,'Yulanda ',948317399,3531892753475,'Y',12,'8 84,59 23',110,0,4,'M',6,NULL,65,'9/13/1981');
+INSERT INTO cab_management.driver values(198,'Jayson ',983020175,9494556121760,'Y',2,'19 42,17 13',110,0,2,'M',19,NULL,70,'1/1/1983');
+INSERT INTO cab_management.driver values(209,'Tad ',915535173,4013630033852,'Y',9,'32 49,10 57',110,0,3,'M',2,NULL,60,'6/22/1954');
+INSERT INTO cab_management.driver values(220,'Garnett ',935299415,7076892363829,'Y',12,'10 25,54 85',110,0,2,'M',18,NULL,70,'1/17/1977');
+INSERT INTO cab_management.driver values(231,'Ronny ',999154036,1890723961900,'Y',3,'80 84,45 11',110,0,1,'M',14,NULL,70,'1/23/1973');
+INSERT INTO cab_management.driver values(242,'Brittney ',920651791,6785369039814,'N',3,'2 27,72 14',0,5,1,'M',7,NULL,65,'8/11/1968');
+INSERT INTO cab_management.driver values(253,'Sindy ',978007222,9853786171204,'N',1,'48 77,26 69',0,1,3,'M',10,NULL,65,'6/22/1976');
+INSERT INTO cab_management.driver values(264,'Carolee ',918900715,8257430744051,'N',3,'62 66,86 47',0,20,2,'M',18,NULL,70,'9/12/1967');
+INSERT INTO cab_management.driver values(275,'Luis ',986138229,4676228099120,'N',10,'19 22,46 85',0,10,1,'M',10,NULL,65,'5/14/1950');
+INSERT INTO cab_management.driver values(286,'Natacha ',915898862,5369705602635,'N',1,'46 21,25 62',0,1,3,'M',1,NULL,60,'8/27/1965');
+INSERT INTO cab_management.driver values(297,'German ',976512120,9987406073643,'N',3,'85 78,89 84',0,15,3,'M',13,NULL,70,'4/15/1953');
+INSERT INTO cab_management.driver values(308,'Madison ',912727965,2728734731586,'N',5,'30 23,28 19',0,22,4,'M',1,NULL,60,'2/7/1954');
+INSERT INTO cab_management.driver values(319,'Antione ',972349744,0236048594358,'N',5,'26 27,72 88',0,24,2,'M',14,NULL,70,'1/1/1977');
+INSERT INTO cab_management.driver values(330,'Selena ',908970047,3698936463177,'N',9,'16 14,2 78',0,16,2,'M',10,NULL,65,'12/27/1951');
+INSERT INTO cab_management.driver values(341,'Anh ',961662284,5951172092716,'N',12,'54 59,61 66',0,29,4,'M',14,NULL,70,'11/12/1966');
+INSERT INTO cab_management.driver values(352,'Sherlene ',909212433,2010760981049,'N',9,'39 2,23 13',0,19,1,'M',7,NULL,65,'1/20/1978');
+INSERT INTO cab_management.driver values(363,'Terence ',939240971,6410775097354,'N',5,'53 48,9 29',0,12,3,'M',1,NULL,60,'11/8/1969');
+INSERT INTO cab_management.driver values(374,'Malinda ',945981104,6757536286521,'N',4,'51 19,79 49',0,7,1,'M',19,NULL,70,'12/28/1955');
+INSERT INTO cab_management.driver values(385,'Marty ',995390131,4871495872642,'N',1,'45 22,21 42',0,2,2,'M',10,NULL,65,'5/23/1966');
+INSERT INTO cab_management.driver values(396,'Newton ',947342735,0315364035295,'N',8,'64 65,33 53',0,21,2,'M',3,NULL,60,'8/26/1953');
+INSERT INTO cab_management.driver values(407,'Maryln ',903261665,6626274963271,'N',8,'6 74,87 17',0,26,3,'M',18,NULL,70,'9/25/1984');
+INSERT INTO cab_management.driver values(418,'Carlena ',984065325,8869671527791,'N',10,'37 72,63 60',0,7,3,'M',11,NULL,70,'10/7/1983');
+INSERT INTO cab_management.driver values(429,'Lakia ',962818560,4995546932175,'N',10,'67 73,50 81',0,10,1,'M',1,NULL,60,'5/26/1966');
+INSERT INTO cab_management.driver values(440,'Kasha ',958412570,9560440163945,'N',8,'44 74,85 80',0,22,2,'M',15,NULL,70,'3/18/1955');
+INSERT INTO cab_management.driver values(451,'Cindie ',931479088,8103892507648,'N',4,'16 41,31 33',0,8,4,'M',19,NULL,70,'6/11/1955');
+INSERT INTO cab_management.driver values(462,'Marylou ',964424206,4753761040096,'N',11,'33 34,35 51',0,23,2,'M',16,NULL,70,'11/23/1984');
+INSERT INTO cab_management.driver values(473,'Deneen ',986951652,6338421015458,'N',11,'34 36,81 20',0,9,1,'M',1,NULL,60,'7/9/1973');
+INSERT INTO cab_management.driver values(484,'Colene ',910163389,6845919834944,'N',12,'44 87,31 53',0,12,2,'M',3,NULL,60,'11/9/1982');
+INSERT INTO cab_management.driver values(495,'Grant ',959045714,0000639263467,'N',9,'16 83,23 35',0,22,3,'M',18,NULL,70,'9/13/1974');
+INSERT INTO cab_management.driver values(506,'Monnie ',927158027,6224809714281,'N',7,'46 52,84 87',0,30,4,'M',2,NULL,60,'2/19/1980');
+INSERT INTO cab_management.driver values(517,'Diedre ',996704970,2153267593744,'N',7,'89 50,9 10',0,7,4,'M',5,NULL,60,'7/22/1960');
+INSERT INTO cab_management.driver values(528,'Kaylee ',953563370,5884293526488,'N',9,'2 9,68 3',0,25,4,'M',17,NULL,70,'2/28/1981');
+INSERT INTO cab_management.driver values(539,'Kasandra ',901899408,3072375070305,'N',3,'46 3,1 90',0,4,1,'M',3,NULL,60,'6/6/1961');
+INSERT INTO cab_management.driver values(550,'Elaine ',942868734,9203845513669,'N',8,'9 50,85 11',0,10,2,'M',12,NULL,70,'6/28/1973');
+INSERT INTO cab_management.driver values(561,'Rosamaria ',974982039,7483684163595,'N',2,'77 33,83 36',0,20,3,'M',1,NULL,60,'11/21/1976');
+INSERT INTO cab_management.driver values(572,'Gertrud ',984703854,3071010224991,'N',6,'46 11,47 63',0,26,3,'M',2,NULL,60,'8/18/1983');
+INSERT INTO cab_management.driver values(583,'Thelma ',924474753,5000405493951,'N',10,'69 73,70 44',0,16,3,'M',16,NULL,70,'12/14/1963');
+INSERT INTO cab_management.driver values(594,'Jackeline ',913171054,1488907436718,'N',7,'26 23,51 84',0,17,1,'M',12,NULL,70,'10/8/1950');
+INSERT INTO cab_management.driver values(605,'Meghan ',928834402,4258590343123,'N',3,'72 52,37 79',0,2,1,'M',9,NULL,65,'5/18/1959');
+INSERT INTO cab_management.driver values(616,'Gregoria ',964758714,2097411555406,'N',7,'67 43,18 10',0,10,4,'M',3,NULL,60,'4/25/1972');
+INSERT INTO cab_management.driver values(627,'Camellia ',972017875,5590430456956,'N',6,'48 41,84 48',0,7,2,'M',12,NULL,70,'11/8/1980');
+INSERT INTO cab_management.driver values(638,'Stanley ',918980950,4021764217384,'N',7,'78 18,6 56',0,27,2,'M',9,NULL,65,'6/5/1964');
+INSERT INTO cab_management.driver values(649,'Kandice ',961260896,0953547391613,'N',2,'38 32,33 48',0,25,1,'M',12,NULL,70,'11/17/1974');
+INSERT INTO cab_management.driver values(660,'Leanora ',923901464,1266151252725,'N',6,'46 14,68 17',0,28,4,'M',17,NULL,70,'10/8/1974');
+INSERT INTO cab_management.driver values(671,'Martina ',944186924,1436933271017,'N',6,'8 65,61 41',0,17,3,'M',14,NULL,70,'2/12/1984');
+INSERT INTO cab_management.driver values(682,'Micheal ',920727829,4377875656611,'N',4,'87 2,79 13',0,15,3,'M',15,NULL,70,'2/10/1951');
+INSERT INTO cab_management.driver values(693,'Sheron ',961984078,3452323068169,'N',3,'81 36,52 45',0,3,1,'M',6,NULL,65,'5/19/1965');
+INSERT INTO cab_management.driver values(704,'Alia ',951084640,3556807358503,'N',5,'14 70,16 81',0,23,4,'M',10,NULL,65,'7/11/1968');
+INSERT INTO cab_management.driver values(715,'Elroy ',995226756,6071304001152,'N',5,'57 89,42 86',0,30,2,'M',12,NULL,70,'2/7/1979');
+INSERT INTO cab_management.driver values(726,'Renata ',984331155,2955560724252,'N',7,'50 65,72 68',0,13,3,'M',15,NULL,70,'7/17/1964');
+INSERT INTO cab_management.driver values(737,'Marvel ',908353422,5873785849647,'N',12,'9 27,57 65',0,14,3,'M',14,NULL,70,'11/3/1979');
+INSERT INTO cab_management.driver values(748,'Joshua ',905676004,6421727955098,'N',3,'79 83,76 35',0,11,4,'M',3,NULL,60,'1/13/1974');
+INSERT INTO cab_management.driver values(759,'Alethea ',943877980,4196914220229,'N',12,'89 80,85 89',0,8,3,'M',11,NULL,70,'12/17/1971');
+INSERT INTO cab_management.driver values(770,'Alica ',998208535,2434960707608,'N',10,'11 60,20 39',0,7,2,'M',8,NULL,65,'9/18/1959');
+INSERT INTO cab_management.driver values(781,'Jerrold ',974553214,5555811125472,'N',7,'79 49,30 48',0,7,1,'M',7,NULL,65,'1/1/1970');
+INSERT INTO cab_management.driver values(792,'Sherise ',944528417,0824894418862,'N',4,'41 47,21 56',0,29,2,'M',15,NULL,70,'11/27/1965');
+INSERT INTO cab_management.driver values(803,'Darron ',973073589,7565120547766,'N',11,'90 65,40 75',0,27,4,'M',20,NULL,70,'6/23/1952');
+INSERT INTO cab_management.driver values(814,'Emmitt ',929901270,5910012778573,'N',11,'6 33,27 22',0,20,1,'M',9,NULL,65,'6/20/1955');
+INSERT INTO cab_management.driver values(825,'Jeane ',941688630,5714066912460,'N',2,'60 43,29 75',0,3,2,'M',17,NULL,70,'11/16/1983');
+INSERT INTO cab_management.driver values(836,'Houston ',998380275,3143490547735,'N',2,'5 48,88 33',0,13,2,'M',11,NULL,70,'3/24/1957');
+INSERT INTO cab_management.driver values(847,'Yen ',900724101,6430486211456,'N',2,'58 23,40 78',0,15,4,'M',18,NULL,70,'8/11/1968');
+INSERT INTO cab_management.driver values(858,'Reiko ',944286900,8993262221116,'N',2,'88 81,10 7',0,8,4,'M',5,NULL,60,'3/10/1958');
+INSERT INTO cab_management.driver values(869,'Ka ',944460969,7796023762056,'N',4,'83 2,3 64',0,25,3,'M',9,NULL,65,'9/12/1968');
+INSERT INTO cab_management.driver values(880,'Tillie ',965878464,1509565178693,'N',9,'69 64,5 67',0,13,3,'M',14,NULL,70,'11/18/1950');
+INSERT INTO cab_management.driver values(891,'Marylynn ',999459110,8456759561069,'N',2,'58 32,75 30',0,21,1,'M',7,NULL,65,'7/18/1965');
+INSERT INTO cab_management.driver values(902,'Elinor ',934747235,9384631214012,'N',5,'32 52,33 25',0,15,2,'M',18,NULL,70,'12/10/1980');
+INSERT INTO cab_management.driver values(913,'Rosario ',961228654,1228042110202,'N',9,'48 36,84 83',0,6,2,'M',14,NULL,70,'2/26/1965');
+INSERT INTO cab_management.driver values(924,'Jerlene ',962028365,5991556760387,'N',4,'60 37,80 20',0,3,3,'M',14,NULL,70,'1/25/1969');
+INSERT INTO cab_management.driver values(935,'Dell ',967463773,8448849389939,'N',5,'30 45,23 48',0,27,3,'M',3,NULL,60,'11/6/1980');
+INSERT INTO cab_management.driver values(946,'Pearline ',908068772,8199356566492,'N',5,'5 13,62 19',0,23,3,'M',6,NULL,65,'11/20/1957');
+INSERT INTO cab_management.driver values(957,'Princess ',963446952,3338677480875,'N',4,'39 4,28 53',0,15,1,'M',18,NULL,70,'8/27/1981');
+INSERT INTO cab_management.driver values(968,'Annis ',972977626,0551889451483,'N',12,'13 37,29 56',0,23,1,'M',10,NULL,65,'8/12/1971');
+INSERT INTO cab_management.driver values(979,'Leota ',952226717,7277150402528,'N',3,'6 23,30 6',0,4,3,'M',6,NULL,65,'2/23/1960');
+INSERT INTO cab_management.driver values(990,'Hortense ',969865210,5956767750847,'N',12,'73 78,40 74',0,2,1,'M',12,NULL,70,'10/23/1958');
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO cab_management.cab values(1000,'Available','8797601296008','N',118,28,1792);
+INSERT INTO cab_management.cab values(1001,'Available','6362664289902','N',134,3,1427);
+INSERT INTO cab_management.cab values(1002,'Booked','3693555784318','N',102,18,1035);
+INSERT INTO cab_management.cab values(1003,'Available','9244601335486','N',149,32,1976);
+INSERT INTO cab_management.cab values(1004,'Booked','9791816145060','N',124,28,1310);
+INSERT INTO cab_management.cab values(1005,'Booked','1765240401610','N',126,35,1385);
+INSERT INTO cab_management.cab values(1006,'Booked','5548244147628','N',130,47,1198);
+INSERT INTO cab_management.cab values(1007,'Booked','4943972938479','N',149,45,1861);
+INSERT INTO cab_management.cab values(1008,'Available','7837998474755','N',139,14,1683);
+INSERT INTO cab_management.cab values(1009,'Booked','9883520725450','N',113,27,1164);
+INSERT INTO cab_management.cab values(1010,'Available','5441804691596','N',143,10,1501);
+INSERT INTO cab_management.cab values(1011,'Available','3053297995037','N',122,3,1470);
+INSERT INTO cab_management.cab values(1012,'Available','3148188133338','N',149,29,1646);
+INSERT INTO cab_management.cab values(1013,'Booked','3550677452208','N',113,40,1938);
+INSERT INTO cab_management.cab values(1014,'Available','2002605867628','N',130,31,1758);
+INSERT INTO cab_management.cab values(1015,'Available','8455617148494','N',130,3,1204);
+INSERT INTO cab_management.cab values(1016,'Booked','4125579215011','N',113,5,1625);
+INSERT INTO cab_management.cab values(1017,'Available','6120343345260','N',115,38,1604);
+INSERT INTO cab_management.cab values(1018,'Booked','5634491431409','N',110,3,1435);
+INSERT INTO cab_management.cab values(1019,'Booked','9799394510183','N',110,45,1646);
+INSERT INTO cab_management.cab values(1020,'Available','2171617208133','N',148,11,1324);
+INSERT INTO cab_management.cab values(1021,'Available','0467221963076','N',139,49,1492);
+INSERT INTO cab_management.cab values(1022,'Booked','4490385239654','N',108,26,1772);
+INSERT INTO cab_management.cab values(1023,'Available','8500043859736','N',145,16,1045);
+INSERT INTO cab_management.cab values(1024,'Available','1546535087156','N',103,10,1008);
+INSERT INTO cab_management.cab values(1025,'Available','7389370523748','N',113,35,1265);
+INSERT INTO cab_management.cab values(1026,'Available','8208609190883','N',104,4,1234);
+INSERT INTO cab_management.cab values(1027,'Booked','0998233583126','N',137,22,1779);
+INSERT INTO cab_management.cab values(1028,'Available','9095515263050','N',114,40,1620);
+INSERT INTO cab_management.cab values(1029,'Available','9419715739812','N',141,38,1693);
+INSERT INTO cab_management.cab values(1030,'Available','5958784207243','N',107,11,1141);
+INSERT INTO cab_management.cab values(1031,'Available','9958784207243','Y',108,1,1241);
+INSERT INTO cab_management.cab values(1032,'Available','8958784207243','Y',109,10,1341);
+INSERT INTO cab_management.cab values(1033,'Available','7958784207243','Y',110,11,1441);
+INSERT INTO cab_management.cab values(1034,'Available','6958784207243','Y',104,12,1541);
+INSERT INTO cab_management.cab values(1035,'Available','5958784207243','Y',110,13,1641);
+INSERT INTO cab_management.cab values(1036,'Available','4958784207243','Y',150,14,1741);
+INSERT INTO cab_management.cab values(1037,'Available','3958784207243','Y',130,15,1841);
+INSERT INTO cab_management.cab values(1038,'Available','2958784207243','Y',137,16,1941);
+INSERT INTO cab_management.cab values(1039,'Available','1958784207243','Y',112,17,1041);
+INSERT INTO cab_management.cab values(1040,'Available','1058784207243','Y',138,18,1041);
+
+
+
+
+
+
+
+
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES (1000,748);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1001,759);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1003 ,770);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1004 ,781);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES (1005 ,792 );
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1006, 803);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES (1007 ,814 );
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1008 ,825);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES (1009 ,836 );
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1010 ,847);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1011 ,858);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1012 ,869);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1014 ,880);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1015 ,891);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1016 ,902);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1017 ,913);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1018 ,924);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1019 ,935);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1020 ,946);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1021 ,957);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1022 ,968);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES ( 1023 ,979);
+INSERT INTO cab_management.drives(customer_id, driver_id) VALUES (1024 ,990);
+
+
+
+
+
+
+
+
+INSERT INTO cab_management.cab_ride values(1100,NULL,
+NULL , '40 50,60 80', '99 89,80 79', 4,43,'Cash', 1001,759 ,'80 90,40 30',NULL,90,25,5,'Cancelled');
+
+
+
+
+INSERT INTO cab_management.cab_ride values(1102,'2018-04-05 2:45:45',
+'2018-04-05 5:42:32' , '55 50,66 80', '90 89,81 79', 5,43,'Cash', 1003,770 ,'80 90,40 30','2018-04-05 3:50:50',90,25,5,'Ongoing');
+INSERT INTO cab_management.cab_ride values(1103,'2018-03-04 1:45:45',
+'2018-03-04 5:42:32' , '55 50,66 80', '90 89,81 79', 5,43,'Cash', 1004,781 ,'80 90,40 30','2018-03-04 3:50:50',90,25,5,'Ongoing');
+
+
+INSERT INTO cab_management.cab_ride values(1104,'2017-05-06 3:45:45',
+'2017-05-06 6:42:32' , '52 50,10 80', '90 89,81 79', 5,43,'Paytm', 1005,792 ,'50 92,40 30','2017-05-06 6:42:32',90,25,5,'Finished');
+INSERT INTO cab_management.cab_ride values(1105,'2017-04-05 2:45:45',
+'2017-04-05 5:42:32' , '55 50,66 80', '90 89,81 79', 5,43,'Paytm', 1006,803 ,'80 90,40 30','2017-04-05 5:42:32',90,25,5,'Finished');
+INSERT INTO cab_management.cab_ride values(1106,'2017-03-04 1:45:45',
+'2017-03-04 5:42:32' , '55 50,16 80', '10 89,81 79', 5,43,'Paytm', 1007,814 ,'80 90,40 30','2017-03-04 5:42:32',90,25,5,'Finished');
+
+
+INSERT INTO cab_management.cab_ride values(1107,'2016-05-06 3:45:45',
+'2016-05-06 6:42:32' , '42 50,10 80', '90 89,81 79', 5,43,'Paytm', 1008,825 ,'50 92,40 30','2016-05-06 4:42:32',90,25,5,'Ongoing');
+INSERT INTO cab_management.cab_ride values(1108,'2016-04-05 2:45:45',
+'2016-04-05 5:42:32' , '35 50,66 80', '90 89,81 79', 5,43,'Paytm', 1009,836 ,'80 90,40 30','2016-04-05 3:42:32',90,25,5,'Ongoing');
+INSERT INTO cab_management.cab_ride values(1109,'2016-03-04 1:45:45',
+'2016-03-04 5:42:32' , '25 50,16 80', '10 89,81 79', 5,43,'Paytm', 1010,847 ,'80 90,40 30','2016-03-04 3:42:32',90,25,5,'Ongoing');
+
+
+INSERT INTO cab_management.cab_ride values(1110,'2015-05-06 3:45:45',
+'2015-05-06 6:42:32' , '42 50,10 80', '90 89,81 79', 5,43,'Netbanking', 1011,858 ,'50 92,40 30','2015-05-06 4:42:32',90,25,5,'Ongoing');
+INSERT INTO cab_management.cab_ride values(1111,'2015-04-05 2:45:45',
+'2015-04-05 5:42:32' , '35 50,66 80', '90 89,81 79', 5,43,'Netbanking', 1012,869 ,'80 90,40 30','2015-04-05 3:42:32',90,25,5,'Ongoing');
+
+
+INSERT INTO cab_management.cab_ride values(1113,'2017-05-06 3:45:45',
+'2017-05-06 6:42:32' , '42 50,10 80', '90 89,81 79', 5,43,'Cash', 1011,858 ,'50 92,40 30','2017-05-06 4:42:32',90,25,5,'Ongoing');
+INSERT INTO cab_management.cab_ride values(1114,'2017-04-05 2:45:45',
+'2017-04-05 5:42:32' , '35 50,66 80', '90 89,81 79', 5,43,'Cash', 1012,869 ,'80 90,40 30','2017-04-05 3:42:32',90,25,5,'Ongoing');
+
+
+
+
+INSERT INTO cab_management.cab_ride values(1116,'2012-05-06 3:45:45',
+'2012-05-06 6:42:32' , '52 50,10 80', '90 89,81 79', 5,43,'Paytm', 1014,880 ,'50 92,40 30','2012-05-06 6:42:32',90,25,5,'Finished');
+INSERT INTO cab_management.cab_ride values(1117,'2012-04-05 2:45:45',
+'2012-04-05 5:42:32' , '55 50,66 80', '90 89,81 79', 5,43,'Paytm', 1015,891 ,'80 90,40 30','2012-04-05 5:42:32',90,25,5,'Finished');
+INSERT INTO cab_management.cab_ride values(1118,'2012-03-04 1:45:45',
+'2012-03-04 5:42:32' , '55 50,16 80', '10 89,81 79', 5,43,'Paytm', 1016,902 ,'80 90,40 30','2012-03-04 5:42:32',90,25,5,'Finished');
+
+
+INSERT INTO cab_management.cab_ride values(1119,'2013-05-06 3:45:45',
+'2013-05-06 6:42:32' , '52 50,10 80', '90 89,81 79', 5,43,'Paytm', 1017,913 ,'50 92,40 30','2013-05-06 6:42:32',90,25,5,'Finished');
+INSERT INTO cab_management.cab_ride values(1120,'2013-04-05 2:45:45',
+'2013-04-05 5:42:32' , '55 50,66 80', '90 89,81 79', 5,43,'Paytm', 1018,924 ,'80 90,40 30','2013-04-05 5:42:32',90,25,5,'Finished');
+INSERT INTO cab_management.cab_ride values(1121,'2013-03-04 1:45:45',
+'2013-03-04 5:42:32' , '55 50,16 80', '10 89,81 79', 5,43,'Paytm', 1019,935 ,'80 90,40 30','2013-03-04 5:42:32',90,25,5,'Finished');
+
+
+INSERT INTO cab_management.cab_ride values(1122,NULL,
+NULL, '40 50,60 80', '99 89,80 79', 4,43,'Cash', 1020,946 ,'80 90,40 30',NULL,90,25,5,'Cancelled');
+INSERT INTO cab_management.cab_ride values(1123,NULL,
+NULL , '40 50,60 80', '99 89,80 79', 4,43,'Cash', 1021,957 ,'80 90,40 30',NULL,90,25,5,'Cancelled');
+INSERT INTO cab_management.cab_ride values(1124,NULL,
+NULL , '40 50,60 80', '99 89,80 79', 4,43,'Cash', 1022,968 ,'80 90,40 30',NULL,90,25,5,'Cancelled');
+INSERT INTO cab_management.cab_ride values(1125,NULL,
+NULL, '40 50,60 80', '99 89,80 79', 4,43,'Cash', 1023,979 ,'80 90,40 30',NULL,90,25,5,'Cancelled');
+INSERT INTO cab_management.cab_ride values(1126,NULL,
+NULL , '40 50,60 80', '99 89,80 79', 4,43,'Cash', 1024,990 ,'80 90,40 30',NULL,90,25,5,'Cancelled');
+
+
+
+
+
+
+
+
+INSERT INTO cab_management.area values (100,'01 00,01 00','50 00,01 00','50 00,50 00','01 00,50 00',5);
+INSERT INTO cab_management.area values (101,'50 00,01 00','99 00,01 00','99 00,50 00','50 00,50 00',4);
+INSERT INTO cab_management.area values (102,'01 00,50 00','50 00,50 00','50 00,99 00','01 00,99 00',3);
+INSERT INTO cab_management.area values (104,'50 00,50 00','99 00,50 00','99 00,99 00','50 00,99 00',6);
+
+
+INSERT INTO cab_management.assignation VALUES (1002, 814, '3/4/2017', 254);
+INSERT INTO cab_management.assignation VALUES (1013, 825, '5/6/2016', 649);
+INSERT INTO cab_management.assignation VALUES (1027, 836, '4/5/2016', 75);
+INSERT INTO cab_management.assignation VALUES (1008, 847, '3/4/2016', 890);
+INSERT INTO cab_management.assignation VALUES (1023, 858, '5/6/2015', 100);
+INSERT INTO cab_management.assignation VALUES (1015, 869, '4/5/2015', 57);
+INSERT INTO cab_management.assignation VALUES (1003, 858, '5/6/2017', 560);
+INSERT INTO cab_management.assignation VALUES (1008, 869, '4/5/2017', 398);
+INSERT INTO cab_management.assignation VALUES (1009, 880, '5/6/2012', 450);
+INSERT INTO cab_management.assignation VALUES (1021, 891, '4/5/2012', 160);
+INSERT INTO cab_management.assignation VALUES (1022, 902, '3/4/2012', 87);
+INSERT INTO cab_management.assignation VALUES (1014, 913, '5/6/2013', 756);
+INSERT INTO cab_management.assignation VALUES (1011, 924, '4/5/2013', 253);
+INSERT INTO cab_management.assignation VALUES (1019, 935, '3/4/2013', 891);
+INSERT INTO cab_management.assignation VALUES (1017, 770, '4/5/2018', 230);
+INSERT INTO cab_management.assignation VALUES (1015, 781, '3/4/2018', 333);
+INSERT INTO cab_management.assignation VALUES (1018, 792, '5/6/2017', 450);
+INSERT INTO cab_management.assignation VALUES (1006, 803, '4/5/2017', 560);
+INSERT INTO cab_management.assignation VALUES (1031, 1001, '8/7/2015', 130);
+INSERT INTO cab_management.assignation VALUES (1037, 1067, '1/12/2018', 180);
+INSERT INTO cab_management.assignation VALUES (1032, 1012, '8/13/2018', 650);
+INSERT INTO cab_management.assignation VALUES (1035, 1045, '2/25/2016', 641);
+INSERT INTO cab_management.assignation VALUES (1036, 1056, '9/13/2015', 189);
+INSERT INTO cab_management.assignation VALUES (1034, 1034, '5/19/2017', 946);
+INSERT INTO cab_management.assignation VALUES (1038, 1078, '10/23/2018', 1000);
+INSERT INTO cab_management.assignation VALUES (1039, 1089, '11/27/2016', 250);

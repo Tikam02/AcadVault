@@ -1,0 +1,32 @@
+Set search_path to xit;
+select pname,pid,p.did,dname from department as d join program as p on (d.did=p.did);
+select studid,name from student where cpi>6.5 AND progid='MIT';
+select studid,name from student where progid='BEE' or progid='MEE' or progid='BIT' or progid='MIT';
+select studid,name from student where batch='2012' AND progid='MSc';
+
+
+set search_path to company;
+select pname from project where plocation='Houston';
+select e1.* from employee as e1 join employee as e2 on (e1.superssn=e2.ssn) where e1.salary<e2.salary;
+select d.* from dependent as d join employee as e on (d.essn=e.ssn) where dno=1;
+select e.fname from employee as e join works_on as w on (w.essn = e.ssn) join project as p on (p.pno=w.pno) where w.hours>2 AND e.dno=5 AND p.pname='ProductX';
+
+
+set search_path to sales;
+select * from items where saleprice>500 AND category='5';
+select invno from sales as s join customer as c on (c.custno=s.customerno) where c.name='Allen';
+select i.name from sales as s join customer as c on (c.custno=s.customerno) join salesdetails as sd on (sd.invno=s.invno) join items as i on (i.code=sd.itemcode) where c.name='John' and s.invdate='2011-08-23' ;
+select c.name from salesdetails as sd join sales as s on (sd.invno=s.invno) join customer as c on (c.custno=s.customerno) where sd.itemcode='c1';
+
+
+set search_path to acad;
+select c.coursename from instructor as i join offers as o on (i.instructorid=o.instructorid) join course as c on (c.courseno=o.courseno) where i.instructorname='P M Jaat' AND ( o.semester='2' or o.semester='4') AND o.acadyear= '200711001';
+select studentid from registers where courseno='MT101' or courseno='MT104';
+select studentid from registers where courseno='MT101' AND courseno!='MT104';
+select s.studentid,name,cpi from student as s join registers as r on (s.studentid=r.studentid) where batch='2008' AND courseno='MT101' AND courseno='MT104';
+select s.studentid,name,cpi from student as s join registers as r on (s.studentid=r.studentid) where batch='2008' AND (semester='1' or semester='3') AND (grade='AA' or grade='AB');
+select studentid from student as s join program as p on (p.progid=s.progid) where batch='2007' AND cpi>=6 AND progname='Btech(CS)';
+
+
+
+
