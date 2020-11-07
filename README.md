@@ -1,7 +1,7 @@
 # AcadVault
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![alt tex](https://github.com/Tikam02/AcadVault/blob/master/img/cover.png)
@@ -126,6 +126,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/JalanshMunshi"><img src="https://avatars0.githubusercontent.com/u/29619543?v=4" width="100px;" alt=""/><br /><sub><b>JalanshMunshi</b></sub></a><br /><a href="#content-JalanshMunshi" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/shivani-nandani"><img src="https://avatars0.githubusercontent.com/u/51031039?v=4" width="100px;" alt=""/><br /><sub><b>shivani-nandani</b></sub></a><br /><a href="#content-shivani-nandani" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/hmtj99"><img src="https://avatars1.githubusercontent.com/u/45735383?v=4" width="100px;" alt=""/><br /><sub><b>Hemant Jain</b></sub></a><br /><a href="#content-hmtj99" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/NeelMakadiya14"><img src="https://avatars2.githubusercontent.com/u/45729507?v=4" width="100px;" alt=""/><br /><sub><b>Neel Makadiya</b></sub></a><br /><a href="#content-NeelMakadiya14" title="Content">🖋</a></td>
   </tr>
 </table>
 
